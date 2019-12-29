@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dupefixproject",
+  "name": "DupeFix Project",
+  "description": "A mod to fix some Dupe Bugs.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Focamacho"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
