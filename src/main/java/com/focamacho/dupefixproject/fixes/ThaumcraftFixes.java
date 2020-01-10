@@ -1,9 +1,12 @@
 package com.focamacho.dupefixproject.fixes;
 
 import net.minecraft.block.Block;
+import net.minecraft.inventory.ContainerRepair;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import thaumcraft.api.blocks.BlocksTC;
+import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.container.ContainerArcaneWorkbench;
 
 public class ThaumcraftFixes {
@@ -20,4 +23,16 @@ public class ThaumcraftFixes {
 			}
 		}
 	}
+	
+	//Anvil Primordial Pearl Dupe Fix
+	@SubscribeEvent
+	public void anvilCheck(PlayerTickEvent event) {
+		if(event.player.openContainer != null && event.player.openContainer instanceof ContainerRepair) {
+			ContainerRepair container = (ContainerRepair) event.player.openContainer;
+			if(container.getSlot(0).getStack().getItem().equals(ItemsTC.primordialPearl) || container.getSlot(1).getStack().getItem().equals(ItemsTC.primordialPearl)) {
+				event.player.closeScreen();
+			}
+		}
+	}
+
 }
