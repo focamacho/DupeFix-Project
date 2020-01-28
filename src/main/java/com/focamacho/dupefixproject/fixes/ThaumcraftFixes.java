@@ -1,6 +1,5 @@
 package com.focamacho.dupefixproject.fixes;
 
-import crazypants.enderio.base.handler.darksteel.gui.DSUContainer;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.ContainerRepair;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;

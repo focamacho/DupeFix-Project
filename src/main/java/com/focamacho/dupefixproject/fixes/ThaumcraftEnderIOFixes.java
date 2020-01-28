@@ -1,7 +1,6 @@
 package com.focamacho.dupefixproject.fixes;
 
 import crazypants.enderio.base.handler.darksteel.gui.DSUContainer;
-import net.minecraft.inventory.ContainerRepair;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import thaumcraft.api.items.ItemsTC;
