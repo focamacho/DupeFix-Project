@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.fixes;
 
+import crazypants.enderio.base.handler.darksteel.gui.DSUContainer;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.ContainerRepair;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
@@ -27,10 +28,12 @@ public class ThaumcraftFixes {
 	//Anvil Primordial Pearl Dupe Fix
 	@SubscribeEvent
 	public void anvilCheck(PlayerTickEvent event) {
-		if(event.player.openContainer != null && event.player.openContainer instanceof ContainerRepair) {
+		if(event.player.openContainer == null) return;
+		if(event.player.openContainer instanceof ContainerRepair) {
 			ContainerRepair container = (ContainerRepair) event.player.openContainer;
 			if(container.getSlot(0).getStack().getItem().equals(ItemsTC.primordialPearl) || container.getSlot(1).getStack().getItem().equals(ItemsTC.primordialPearl)) {
 				event.player.closeScreen();
+				return;
 			}
 		}
 	}
