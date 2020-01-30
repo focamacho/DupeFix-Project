@@ -24,9 +24,10 @@ public class DupeFixProject
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "1.3";
+    public static final String VERSION = "1.4";
 
     public static Logger logger;
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
     	logger = event.getModLog();
@@ -70,7 +71,9 @@ public class DupeFixProject
         //Mekanism
         if(Loader.isModLoaded("mekanism")) {
         	MinecraftForge.EVENT_BUS.register(new MekanismFixes());
+        	MekanismFixes.init();
         	logger.info("Mekanism Fixes Loaded");
         }
     }
+    
 }

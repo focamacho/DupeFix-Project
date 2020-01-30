@@ -3,15 +3,20 @@ package com.focamacho.dupefixproject.fixes;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.collect.Lists;
+
 import mekanism.common.MekanismBlocks;
 import mekanism.common.inventory.container.ContainerPersonalChest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.registries.ForgeRegistry;
 
 public class MekanismFixes {
 
@@ -48,6 +53,16 @@ public class MekanismFixes {
 				}
 			} else {
 				player.getEntityData().setBoolean("PersonalChestDupeFixFirst", true);
+			}
+		}
+	}
+	
+	public static void init() {
+		ForgeRegistry<IRecipe> recipeRegistry = (ForgeRegistry<IRecipe>) ForgeRegistries.RECIPES;
+		ArrayList<IRecipe> recipes = Lists.newArrayList(recipeRegistry.getValuesCollection());
+		for(IRecipe recipe : recipes) {
+			if(recipe instanceof mekanism.common.recipe.BinRecipe) {
+				recipeRegistry.remove(recipe.getRegistryName());
 			}
 		}
 	}
