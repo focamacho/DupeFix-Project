@@ -64,7 +64,7 @@ public class ThaumcraftFixes {
 			if(heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("infench")) {
 				NBTTagList nbtList = EnumInfusionEnchantment.getInfusionEnchantmentTagList(heldItem);
 				for(int i = 0; i < nbtList.tagCount(); i++) {
-					if(nbtList.getCompoundTagAt(0).getShort("id") == 0) {
+					if(nbtList.getCompoundTagAt(i).getShort("id") == 0) {
 						nbtList.removeTag(i);
 						heldItem.setTagInfo("infench", nbtList);
 						heldItem.getTagCompound().setBoolean("fixCollector", true);
@@ -96,7 +96,7 @@ public class ThaumcraftFixes {
 				if(heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("infench")) {
 					NBTTagList nbtList = EnumInfusionEnchantment.getInfusionEnchantmentTagList(heldItem);
 					for(int i = 0; i < nbtList.tagCount(); i++) {
-						if(nbtList.getCompoundTagAt(0).getShort("id") == 0) {
+						if(nbtList.getCompoundTagAt(i).getShort("id") == 0) {
 							nbtList.removeTag(i);
 							heldItem.setTagInfo("infench", nbtList);
 							heldItem.getTagCompound().setBoolean("fixCollector", true);
