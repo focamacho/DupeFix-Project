@@ -2,6 +2,7 @@ package com.focamacho.dupefixproject;
 
 import org.apache.logging.log4j.Logger;
 
+import com.focamacho.dupefixproject.fixes.CyclicFixes;
 import com.focamacho.dupefixproject.fixes.FurnaceOverhaulFixes;
 import com.focamacho.dupefixproject.fixes.MekanismFixes;
 import com.focamacho.dupefixproject.fixes.ProjectRedWorldFixes;
@@ -24,7 +25,7 @@ public class DupeFixProject
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "1.6";
+    public static final String VERSION = "1.7";
 
     public static Logger logger;
     
@@ -73,6 +74,11 @@ public class DupeFixProject
         	MinecraftForge.EVENT_BUS.register(new MekanismFixes());
         	MekanismFixes.init();
         	logger.info("Mekanism Fixes Loaded");
+        }
+        //Cyclic
+        if(Loader.isModLoaded("cyclicmagic")) {
+        	MinecraftForge.EVENT_BUS.register(new CyclicFixes());
+        	logger.info("Cyclic Fixes loaded");
         }
     }
     
