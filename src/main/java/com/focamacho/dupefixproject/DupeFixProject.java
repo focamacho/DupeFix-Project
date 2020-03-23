@@ -1,15 +1,7 @@
 package com.focamacho.dupefixproject;
 
+import com.focamacho.dupefixproject.fixes.*;
 import org.apache.logging.log4j.Logger;
-
-import com.focamacho.dupefixproject.fixes.FurnaceOverhaulFixes;
-import com.focamacho.dupefixproject.fixes.MekanismFixes;
-import com.focamacho.dupefixproject.fixes.ProjectRedWorldFixes;
-import com.focamacho.dupefixproject.fixes.SpiceOfLifeFixes;
-import com.focamacho.dupefixproject.fixes.TConstructFixes;
-import com.focamacho.dupefixproject.fixes.ThaumcraftEnderIOFixes;
-import com.focamacho.dupefixproject.fixes.ThaumcraftFixes;
-import com.focamacho.dupefixproject.fixes.TinyProgressionsFixes;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -73,6 +65,12 @@ public class DupeFixProject
         	MinecraftForge.EVENT_BUS.register(new MekanismFixes());
         	MekanismFixes.init();
         	logger.info("Mekanism Fixes Loaded");
+        }
+
+        //danknull
+        if (Loader.isModLoaded("danknull")) {
+            MinecraftForge.EVENT_BUS.register(new DankNullFixes());
+            logger.info("danknull Fixes Loaded");
         }
     }
     
