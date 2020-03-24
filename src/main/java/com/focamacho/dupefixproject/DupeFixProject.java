@@ -2,8 +2,8 @@ package com.focamacho.dupefixproject;
 
 import org.apache.logging.log4j.Logger;
 
+import com.focamacho.dupefixproject.fixes.AstralSorceryFixes;
 import com.focamacho.dupefixproject.fixes.CyclicFixes;
-import com.focamacho.dupefixproject.fixes.FurnaceOverhaulFixes;
 import com.focamacho.dupefixproject.fixes.MekanismFixes;
 import com.focamacho.dupefixproject.fixes.ProjectRedWorldFixes;
 import com.focamacho.dupefixproject.fixes.SpiceOfLifeFixes;
@@ -20,17 +20,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = DupeFixProject.MODID, name = DupeFixProject.NAME, version = DupeFixProject.VERSION, acceptableRemoteVersions = "*")
-public class DupeFixProject
-{
+public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "1.7";
+    public static final String VERSION = "1.8";
 
     public static Logger logger;
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event){
+    public void preInit(FMLPreInitializationEvent event) {
     	logger = event.getModLog();
     }
 
@@ -43,11 +42,6 @@ public class DupeFixProject
         		MinecraftForge.EVENT_BUS.register(new ThaumcraftEnderIOFixes());
         	}
         	logger.info("Thaumcraft Fixes Loaded");
-        }
-        //Furnace Overhaul
-        if(Loader.isModLoaded("furnaceoverhaul")) {
-        	MinecraftForge.EVENT_BUS.register(new FurnaceOverhaulFixes());
-        	logger.info("Furnace Overhaul Fixes Loaded");
         }
         //Tinkers' Construct
         if(Loader.isModLoaded("tconstruct")) {
@@ -78,7 +72,12 @@ public class DupeFixProject
         //Cyclic
         if(Loader.isModLoaded("cyclicmagic")) {
         	MinecraftForge.EVENT_BUS.register(new CyclicFixes());
-        	logger.info("Cyclic Fixes loaded");
+        	logger.info("Cyclic Fixes Loaded");
+        }
+        //Astral Sorcery
+        if(Loader.isModLoaded("astralsorcery")) {
+        	MinecraftForge.EVENT_BUS.register(new AstralSorceryFixes());
+        	logger.info("Astral Sorcery Fixes Loaded");
         }
     }
     
