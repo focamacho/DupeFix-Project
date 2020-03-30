@@ -1,10 +1,6 @@
 package com.focamacho.dupefixproject.fixes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import mekanism.common.MekanismBlocks;
 import mekanism.common.inventory.container.ContainerPersonalChest;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,6 +13,9 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.registries.ForgeRegistry;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MekanismFixes {
 

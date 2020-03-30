@@ -1,22 +1,17 @@
 package com.focamacho.dupefixproject.fixes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
-import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.items.ItemStackHandler;
 import netherchest.common.Content;
 import netherchest.common.blocks.BlockNetherChest;
-import netherchest.common.tileentity.TileEntityNetherChest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NetherChestFixes {
 

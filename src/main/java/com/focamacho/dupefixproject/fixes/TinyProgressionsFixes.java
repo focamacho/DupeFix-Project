@@ -1,17 +1,16 @@
 package com.focamacho.dupefixproject.fixes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kashdeya.tinyprogressions.container.PouchContainer;
 import com.kashdeya.tinyprogressions.inits.TechItems;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TinyProgressionsFixes {
 	

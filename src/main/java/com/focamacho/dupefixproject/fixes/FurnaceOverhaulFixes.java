@@ -1,7 +1,5 @@
 package com.focamacho.dupefixproject.fixes;
 
-import java.util.List;
-
 import cazador.furnaceoverhaul.blocks.BlockIronFurnace;
 import cazador.furnaceoverhaul.blocks.BlockTranslucentFurnace;
 import cazador.furnaceoverhaul.inventory.ContainerFO;
@@ -10,6 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.List;
 
 public class FurnaceOverhaulFixes {
 
