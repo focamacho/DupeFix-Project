@@ -1,17 +1,7 @@
 package com.focamacho.dupefixproject;
 
+import com.focamacho.dupefixproject.fixes.*;
 import org.apache.logging.log4j.Logger;
-
-import com.focamacho.dupefixproject.fixes.AstralSorceryFixes;
-import com.focamacho.dupefixproject.fixes.CyclicFixes;
-import com.focamacho.dupefixproject.fixes.MekanismFixes;
-import com.focamacho.dupefixproject.fixes.NetherChestFixes;
-import com.focamacho.dupefixproject.fixes.ProjectRedWorldFixes;
-import com.focamacho.dupefixproject.fixes.SpiceOfLifeFixes;
-import com.focamacho.dupefixproject.fixes.TConstructFixes;
-import com.focamacho.dupefixproject.fixes.ThaumcraftEnderIOFixes;
-import com.focamacho.dupefixproject.fixes.ThaumcraftFixes;
-import com.focamacho.dupefixproject.fixes.TinyProgressionsFixes;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -25,7 +15,7 @@ public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "1.9";
+    public static final String VERSION = "2.0";
 
     public static Logger logger;
     
@@ -84,6 +74,11 @@ public class DupeFixProject {
         if(Loader.isModLoaded("netherchest")) {
         	MinecraftForge.EVENT_BUS.register(new NetherChestFixes());
         	logger.info("Nether Chest Fixes Loaded");
+        }
+        //Blood Magic
+        if(Loader.isModLoaded("bloodmagic")) {
+            MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
+            logger.info("Blood Magic Fixes Loaded");
         }
     }
     
