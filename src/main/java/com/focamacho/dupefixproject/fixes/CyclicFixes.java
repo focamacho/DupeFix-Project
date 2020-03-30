@@ -1,20 +1,13 @@
 package com.focamacho.dupefixproject.fixes;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
 import java.util.List;
 
 import com.lothrazar.cyclicmagic.block.workbench.BlockWorkbench;
 import com.lothrazar.cyclicmagic.block.workbench.ContainerWorkBench;
-import com.lothrazar.cyclicmagic.gui.container.ContainerBaseMachine;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTSizeTracker;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

@@ -58,8 +58,8 @@ public class ThaumcraftFixes {
 	
 	//Collector Enchantment Fix
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
-	public void removeTag(BlockEvent.HarvestDropsEvent event) {
-		if(event.getHarvester() != null) {
+	public void harvestDrops(BlockEvent.HarvestDropsEvent event) {
+		if(event.getHarvester() != null && event.getHarvester().getActiveHand() != null) {
 			ItemStack heldItem = event.getHarvester().getHeldItem(event.getHarvester().getActiveHand());
 			if(heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("infench")) {
 				NBTTagList nbtList = EnumInfusionEnchantment.getInfusionEnchantmentTagList(heldItem);
@@ -77,7 +77,7 @@ public class ThaumcraftFixes {
 	
 	@SubscribeEvent(priority=EventPriority.LOWEST)
 	public void dropsCheck(BlockEvent.HarvestDropsEvent event) {
-		if(event.getHarvester() != null) {
+		if(event.getHarvester() != null && event.getHarvester().getActiveHand() != null) {
 			ItemStack heldItem = event.getHarvester().getHeldItem(event.getHarvester().getActiveHand());
 			if(heldItem != null && !heldItem.isEmpty()) {
 				if(heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("fixCollector")) {
@@ -90,7 +90,7 @@ public class ThaumcraftFixes {
 	
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void removeTagB(LivingDropsEvent event) {
-		if(event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
+		if(event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && ((EntityPlayer) event.getSource().getTrueSource()).getActiveHand() != null) {
 			ItemStack heldItem = ((EntityPlayer)event.getSource().getTrueSource()).getHeldItem(((EntityPlayer)event.getSource().getTrueSource()).getActiveHand());
 			if(heldItem != null && !heldItem.isEmpty()) {
 				if(heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("infench")) {
@@ -110,7 +110,7 @@ public class ThaumcraftFixes {
 	
 	@SubscribeEvent(priority=EventPriority.LOWEST)
 	public void livingDrops(LivingDropsEvent event) {
-		if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
+		if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && ((EntityPlayer) event.getSource().getTrueSource()).getActiveHand() != null) {
 			ItemStack heldItem = ((EntityPlayer)event.getSource().getTrueSource()).getHeldItem(((EntityPlayer)event.getSource().getTrueSource()).getActiveHand());
 			if (heldItem != null && !heldItem.isEmpty()) {
 				if (heldItem.hasTagCompound() && heldItem.getTagCompound().hasKey("fixCollector")) {
@@ -132,4 +132,5 @@ public class ThaumcraftFixes {
         	event.getToolTip().add(1, TextFormatting.GOLD + I18n.translateToLocal("enchantment.infusion.COLLECTOR"));
 		}
 	}
+
 }

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import com.focamacho.dupefixproject.fixes.AstralSorceryFixes;
 import com.focamacho.dupefixproject.fixes.CyclicFixes;
 import com.focamacho.dupefixproject.fixes.MekanismFixes;
+import com.focamacho.dupefixproject.fixes.NetherChestFixes;
 import com.focamacho.dupefixproject.fixes.ProjectRedWorldFixes;
 import com.focamacho.dupefixproject.fixes.SpiceOfLifeFixes;
 import com.focamacho.dupefixproject.fixes.TConstructFixes;
@@ -24,7 +25,7 @@ public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "1.8";
+    public static final String VERSION = "1.9";
 
     public static Logger logger;
     
@@ -78,6 +79,11 @@ public class DupeFixProject {
         if(Loader.isModLoaded("astralsorcery")) {
         	MinecraftForge.EVENT_BUS.register(new AstralSorceryFixes());
         	logger.info("Astral Sorcery Fixes Loaded");
+        }
+        //Nether Chest
+        if(Loader.isModLoaded("netherchest")) {
+        	MinecraftForge.EVENT_BUS.register(new NetherChestFixes());
+        	logger.info("Nether Chest Fixes Loaded");
         }
     }
     
