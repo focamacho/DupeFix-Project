@@ -74,6 +74,11 @@ public class DupeFixProject {
             MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
             logger.info("Blood Magic Fixes Loaded");
         }
+        //Ender Utilities
+        if(Loader.isModLoaded("enderutilities")) {
+            MinecraftForge.EVENT_BUS.register(new EnderUtilitiesFixes());
+            logger.info("Ender Utilities Fixes Loaded");
+        }
     }
     
 }
