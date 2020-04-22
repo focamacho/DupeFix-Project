@@ -14,7 +14,7 @@ public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "2.1";
+    public static final String VERSION = "2.2";
 
     public static Logger logger;
     
@@ -78,6 +78,11 @@ public class DupeFixProject {
         if(Loader.isModLoaded("enderutilities")) {
             MinecraftForge.EVENT_BUS.register(new EnderUtilitiesFixes());
             logger.info("Ender Utilities Fixes Loaded");
+        }
+        //Twilight Forest
+        if(Loader.isModLoaded("twilightforest")) {
+            MinecraftForge.EVENT_BUS.register(new TwilightForestFixes());
+            logger.info("Twilight Forest Fixes Loaded");
         }
     }
     
