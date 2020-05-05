@@ -14,7 +14,7 @@ public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "2.2";
+    public static final String VERSION = "2.3";
 
     public static Logger logger;
     
@@ -58,11 +58,6 @@ public class DupeFixProject {
         	MinecraftForge.EVENT_BUS.register(new MekanismFixes());
         	MekanismFixes.init();
         	logger.info("Mekanism Fixes Loaded");
-        }
-        //Cyclic
-        if(Loader.isModLoaded("cyclicmagic")) {
-        	MinecraftForge.EVENT_BUS.register(new CyclicFixes());
-        	logger.info("Cyclic Fixes Loaded");
         }
         //Nether Chest
         if(Loader.isModLoaded("netherchest")) {

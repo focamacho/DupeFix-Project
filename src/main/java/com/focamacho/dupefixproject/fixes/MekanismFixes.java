@@ -55,7 +55,8 @@ public class MekanismFixes {
 			}
 		}
 	}
-	
+
+	//Bin Recipe Dupe Fix
 	public static void init() {
 		ForgeRegistry<IRecipe> recipeRegistry = (ForgeRegistry<IRecipe>) ForgeRegistries.RECIPES;
 		ArrayList<IRecipe> recipes = Lists.newArrayList(recipeRegistry.getValuesCollection());
@@ -65,4 +66,24 @@ public class MekanismFixes {
 			}
 		}
 	}
+
+	//I tried
+	/*
+	@SubscribeEvent
+	public void unloadChunkFix(BlockEvent.NeighborNotifyEvent event) {
+		if(event.getState() != null && event.getState().getBlock() instanceof BlockTransmitter) {
+			if(event.getWorld().getTileEntity(event.getPos()) != null && event.getWorld().getTileEntity(event.getPos()) instanceof TileEntityLogisticalTransporter) {
+				NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
+
+				TileEntityLogisticalTransporter tileEntity = (TileEntityLogisticalTransporter) event.getWorld().getTileEntity(event.getPos());
+				NBTTagCompound nbt = new NBTTagCompound();
+
+				tileEntity.writeToNBT(nbt);
+				ItemStackHelper.loadAllItems(nbt, items);
+				for(EntityItem item : event.getWorld().getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(event.getPos()))) {
+					if(items.contains(item.getItem())) event.getWorld().removeEntity(item);
+				}
+			}
+		}
+	}*/
 }
