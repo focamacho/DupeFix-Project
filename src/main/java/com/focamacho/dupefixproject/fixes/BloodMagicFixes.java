@@ -11,10 +11,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BloodMagicFixes {
 
     //Sigil of Holding Dupe Fix
+    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void detectItemDrop(TickEvent.PlayerTickEvent event) {
         if(event.phase == TickEvent.Phase.START && event.side == Side.SERVER) {
@@ -27,6 +29,7 @@ public class BloodMagicFixes {
     }
 
     //Sentient Armor Dupe Fix
+    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void detectSentientArmor(TickEvent.PlayerTickEvent event) {
         if(event.phase == TickEvent.Phase.START && event.side == Side.SERVER) {

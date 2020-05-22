@@ -7,6 +7,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import netherchest.common.Content;
 import netherchest.common.blocks.BlockNetherChest;
 
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class NetherChestFixes {
 
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void blockBreak(BreakEvent event) {
 		if(event.getState() != null && event.getState().getBlock() instanceof BlockNetherChest && event.getWorld().getTileEntity(event.getPos()) != null) {

@@ -7,6 +7,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.tools.common.block.BlockToolForge;
 import slimeknights.tconstruct.tools.common.inventory.ContainerToolForge;
 
@@ -15,6 +17,7 @@ import java.util.List;
 public class TConstructFixes {
 
 	//Tool Forge Dupe Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void onRightClickBlock(RightClickBlock event) {
 		if(event.getEntityPlayer() != null) {
@@ -33,7 +36,8 @@ public class TConstructFixes {
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void onTickPlayer(PlayerTickEvent event) {
 		if(event.player.openContainer != null && event.player.openContainer instanceof ContainerToolForge) {

@@ -36,6 +36,7 @@ import java.util.List;
 public class ThaumcraftFixes {
 
 	//Arcane Workbench Dupe Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void onRightClickBlock(RightClickBlock event) {
 		Block block = event.getWorld().getBlockState(event.getPos()).getBlock();
@@ -69,6 +70,7 @@ public class ThaumcraftFixes {
 		}
 	}
 
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void onTickPlayer(PlayerTickEvent event) {
 		if(event.player.openContainer != null && !(event.player.openContainer instanceof ContainerArcaneWorkbench)) {
@@ -77,6 +79,7 @@ public class ThaumcraftFixes {
 	}
 	
 	//Anvil Primordial Pearl Dupe Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void anvilCheck(PlayerTickEvent event) {
 		if(event.player.openContainer == null) return;
@@ -90,6 +93,7 @@ public class ThaumcraftFixes {
 	}
 	
 	//Collector Enchantment Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void harvestDrops(BlockEvent.HarvestDropsEvent event) {
 		if(event.getHarvester() != null && event.getHarvester().getActiveHand() != null) {
@@ -107,7 +111,8 @@ public class ThaumcraftFixes {
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent(priority=EventPriority.LOWEST)
 	public void dropsCheck(BlockEvent.HarvestDropsEvent event) {
 		if(event.getHarvester() != null && event.getHarvester().getActiveHand() != null) {
@@ -120,7 +125,8 @@ public class ThaumcraftFixes {
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void removeTagB(LivingDropsEvent event) {
 		if(event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && ((EntityPlayer) event.getSource().getTrueSource()).getActiveHand() != null) {
@@ -140,7 +146,8 @@ public class ThaumcraftFixes {
 			}
 		}
 	}
-	
+
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent(priority=EventPriority.LOWEST)
 	public void livingDrops(LivingDropsEvent event) {
 		if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && ((EntityPlayer) event.getSource().getTrueSource()).getActiveHand() != null) {
@@ -167,6 +174,7 @@ public class ThaumcraftFixes {
 	}
 
 	//Arcane Stone Dupe Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void arcaneStoneFix(BlockEvent.NeighborNotifyEvent event) {
 		if(event.getState() != null && event.getState().getBlock().equals(BlocksTC.hole)) {

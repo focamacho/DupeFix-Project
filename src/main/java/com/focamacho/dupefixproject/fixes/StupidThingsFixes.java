@@ -10,6 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.lang.reflect.Method;
 
@@ -17,6 +19,7 @@ public class StupidThingsFixes {
 
 
     //NOT READY YET
+    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void blockBreak(PlayerInteractEvent.RightClickBlock event) {
         if(event.getEntityPlayer() != null && event.getHand() != null && event.getItemStack() != null && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() instanceof ItemImprovedHoe) {

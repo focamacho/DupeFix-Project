@@ -14,7 +14,7 @@ public class DupeFixProject {
 	
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "2.3";
+    public static final String VERSION = "2.4";
 
     public static Logger logger;
     

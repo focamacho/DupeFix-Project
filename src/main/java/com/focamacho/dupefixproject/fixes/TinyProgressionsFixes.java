@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class TinyProgressionsFixes {
 	
 	//Big Pouch Dupe Fix
+	@SideOnly(Side.SERVER)
 	@SubscribeEvent
 	public void onMoveItem(PlayerTickEvent event) {
 		if(event.phase == TickEvent.Phase.START && event.side == Side.SERVER) {

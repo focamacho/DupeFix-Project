@@ -25,6 +25,8 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import javax.annotation.Nullable;
@@ -35,6 +37,7 @@ public class EnderUtilitiesFixes {
     //
     //All this code is from Ender Utilities(https://github.com/maruohon/enderutilities/blob/master/src/main/java/fi/dy/masa/enderutilities/item/ItemDolly.java)
     //but with some things modified to work properly
+    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void onRightClick(PlayerInteractEvent.RightClickBlock event) {
         if(event.getEntityPlayer() != null && event.getHand() != null && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() instanceof ItemDolly){
