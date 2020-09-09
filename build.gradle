@@ -125,6 +125,9 @@ dependencies {
     compileOnly("curse.maven:industrialforegoing:2745324")
     compileOnly("curse.maven:teslacorelib:2891841")
 
+    //Extra Utilities
+    compileOnly("curse.maven:extrautilities:2678374")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false

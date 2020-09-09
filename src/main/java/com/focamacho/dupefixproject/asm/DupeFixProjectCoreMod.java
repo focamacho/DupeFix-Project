@@ -54,6 +54,10 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
             DupeFixProject.logger.info("Initialized Industrial Foregoing Fixes");
             Mixins.addConfiguration("mixins/mixins.dupefixproject.industrialforegoing.json");
         }
+        if(loadJar(DupeFixProjectConfig.actuallyAdditions)) {
+            DupeFixProject.logger.info("Initialized Actually Additions Fixes");
+            Mixins.addConfiguration("mixins/mixins.dupefixproject.actuallyadditions.json");
+        }
 
         MixinBootstrap.init();
     }
