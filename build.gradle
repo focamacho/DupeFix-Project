@@ -1,40 +1,35 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven {
+            name = 'forge'
+            url = 'https://files.minecraftforge.net/maven'
+        }
+        maven {
+
+            url = 'http://repo.spongepowered.org/maven'
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'org.spongepowered.mixin'
 
-version = "2.4"
+version = "3.0"
 group = "com.focamacho.dupefixproject"
-archivesBaseName = "dupefixproject"
+archivesBaseName = "DupeFixProject-1.12.2"
 
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
-minecraft {
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
-    mappings = "snapshot_20171003"
-}
-
-repositories {
-    flatDir {
-        dirs 'libs'
+sourceSets {
+    main {
+        ext.refMap = 'mixins.dupefixproject.refmap.json'
     }
-	maven {
-		url = "https://maven.theillusivec4.top/"
-	} 
-}
-
-dependencies {
-	compile fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 processResources {
@@ -44,10 +39,115 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
 
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': project.version, 'mcversion': project.minecraft.version
     }
-        
+
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+
+    rename '(.+_at.cfg)', 'META-INF/$1'
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2847"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+
+    def args = [
+            '-Dfml.coreMods.load=com.focamacho.dupefixproject.asm.DupeFixProjectCoreMod',
+            '-Dmixin.hotSwap=true',
+            '-Dmixin.checks.interfaces=true'
+    ]
+
+    clientJvmArgs.addAll(args)
+    serverJvmArgs.addAll(args)
+}
+
+configurations {
+    embed
+    implementation.extendsFrom(embed)
+}
+
+repositories {
+    //mavenCentral()
+    maven {
+        url = 'http://repo.spongepowered.org/maven'
+    }
+
+    maven {
+        name = "CurseMaven"
+        url = "https://www.cursemaven.com"
+    }
+}
+
+dependencies {
+    //Tiny Progressions
+    compileOnly("curse.maven:tinyprogressions:2721018")
+
+    //The Spice of Life + Dependencies
+    compileOnly("curse.maven:thespiceoflife:2571951")
+    compileOnly("curse.maven:applecore:2969118")
+
+    //Nether Chest
+    compileOnly("curse.maven:netherchest:2655413")
+
+    //Mekanism
+    compileOnly("curse.maven:mekanism:2835175")
+
+    //Project Red World + Dependencies
+    compileOnly("curse.maven:projectredworld:2745551")
+    compileOnly("curse.maven:projectredbase:2745545")
+    compileOnly("curse.maven:codechickenlib:2779848")
+    compileOnly("curse.maven:forgemultipartcbe:2755790")
+    compileOnly("curse.maven:mrtjpcore:2735197")
+
+    //Blood Magic + Dependencies
+    compileOnly("curse.maven:bloodmagic:2822288")
+    compileOnly("curse.maven:guideapi:2645992")
+
+    //Twilight Forest
+    compileOnly("curse.maven:twilightforest:2818055")
+
+    //Thaumcraft + Dependencies
+    compileOnly("curse.maven:thaumcraft:2629023")
+    compileOnly("curse.maven:baubles:2518667")
+
+    //EnderIO + Dependencies
+    compileOnly("curse.maven:enderio:2989201")
+    compileOnly("curse.maven:endercore:2972849")
+
+    //Tinkers' Construct + Dependencies
+    compileOnly("curse.maven:tconstruct:2902483")
+    compileOnly("curse.maven:mantle:2713386")
+
+    //Actually Additions
+    compileOnly("curse.maven:actuallyaditions:2844115")
+
+    //Mixins
+    embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
+        transitive = false
+    }
+
+    //Utils
+    embed group: 'org.json', name: 'json', version: '20200518'
+    embed group: 'commons-io', name: 'commons-io', version: '2.7'
+}
+
+jar {
+    from(configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }) {
+        exclude 'LICENSE.txt', 'META-INF/MANIFSET.MF', 'META-INF/maven/**', 'META-INF/*.RSA', 'META-INF/*.SF'
+    }
+
+    manifest.attributes(
+            'FMLCorePluginContainsFMLMod': true,
+            'ForceLoadAsMod': true,
+            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+            'MixinConfigs': 'mixins.dupefixproject.json',
+            'FMLCorePlugin': 'com.focamacho.dupefixproject.asm.DupeFixProjectCoreMod'
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
