@@ -16,6 +16,7 @@ public class DupeFixProjectConfig {
     public static String bloodMagic = "";
     public static String tinyProgressions = "";
     public static String enderio = "";
+    public static String industrialForegoing = "";
 
     public static void initConfigs() throws IOException {
         JSONObject json = JsonHandler.getOrCreateJson(configFile);
@@ -26,6 +27,7 @@ public class DupeFixProjectConfig {
         bloodMagic = JsonHandler.getOrCreateString(configFile, "bloodMagic", "");
         tinyProgressions = JsonHandler.getOrCreateString(configFile, "tinyProgressions", "");
         enderio = JsonHandler.getOrCreateString(configFile, "enderio", "");
+        industrialForegoing = JsonHandler.getOrCreateString(configFile, "industrialForegoing", "");
     }
 
 }

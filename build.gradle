@@ -106,9 +106,6 @@ dependencies {
     compileOnly("curse.maven:bloodmagic:2822288")
     compileOnly("curse.maven:guideapi:2645992")
 
-    //Twilight Forest
-    compileOnly("curse.maven:twilightforest:2818055")
-
     //Thaumcraft + Dependencies
     compileOnly("curse.maven:thaumcraft:2629023")
     compileOnly("curse.maven:baubles:2518667")
@@ -123,6 +120,10 @@ dependencies {
 
     //Actually Additions
     compileOnly("curse.maven:actuallyaditions:2844115")
+
+    //Industrial Foregoing + Dependencies
+    compileOnly("curse.maven:industrialforegoing:2745324")
+    compileOnly("curse.maven:teslacorelib:2891841")
 
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
