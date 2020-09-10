@@ -35,6 +35,9 @@ public class DupeFixProject {
         if(Loader.isModLoaded("tconstruct")) {
             MinecraftForge.EVENT_BUS.register(new TConstructFixes());
         }
+        if(Loader.isModLoaded("thaumcraft")) {
+            MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
+        }
     }
     
 }
