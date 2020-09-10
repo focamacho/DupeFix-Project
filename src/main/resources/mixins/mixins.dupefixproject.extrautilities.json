@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.focamacho.dupefixproject.mixin.extrautilities",
+  "refmap": "mixins.dupefixproject.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "DynamicContainerMixin"
+  ]
+}
