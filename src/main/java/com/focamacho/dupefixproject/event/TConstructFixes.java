@@ -17,7 +17,6 @@ import java.util.List;
 public class TConstructFixes {
 
     //Tool Forge Dupe Fix
-    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void onRightClickBlock(RightClickBlock event) {
         if(event.getEntityPlayer() != null) {
@@ -37,7 +36,6 @@ public class TConstructFixes {
         }
     }
 
-    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void onTickPlayer(PlayerTickEvent event) {
         if(event.player.openContainer != null && event.player.openContainer instanceof ContainerToolForge) {

@@ -12,7 +12,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ProjectRedWorldFixes {
 
     //Backpack Dupe Fix
-    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void onRightClick(RightClickBlock event) {
         if(event.getItemStack().getItem().equals(Item.getByNameOrId("projectred-exploration:backpack"))) {
@@ -21,7 +20,7 @@ public class ProjectRedWorldFixes {
             }
         }
     }
-    @SideOnly(Side.SERVER)
+
     @SubscribeEvent
     public void onRightClickItem(RightClickItem event) {
         if(event.getItemStack().getItem().equals(Item.getByNameOrId("projectred-exploration:backpack"))) {
@@ -30,7 +29,7 @@ public class ProjectRedWorldFixes {
             }
         }
     }
-    @SideOnly(Side.SERVER)
+
     @SubscribeEvent
     public void onTickPlayer(PlayerTickEvent event) {
         if(event.player.openContainer != null) {

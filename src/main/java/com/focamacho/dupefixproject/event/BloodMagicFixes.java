@@ -14,7 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BloodMagicFixes {
 
     //Sentient Armor Dupe Fix
-    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void detectSentientArmor(TickEvent.PlayerTickEvent event) {
         if(event.phase == TickEvent.Phase.START && event.side == Side.SERVER) {

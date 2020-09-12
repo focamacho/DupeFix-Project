@@ -131,6 +131,9 @@ dependencies {
     //Bewitchment
     compileOnly("curse.maven:bewitchment:3044569")
 
+    //Botania
+    compileOnly("curse.maven:botania:2846950")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false

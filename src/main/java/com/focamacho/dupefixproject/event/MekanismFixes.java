@@ -21,7 +21,6 @@ import java.util.List;
 public class MekanismFixes {
 
     //Personal Chest Dupe Fix
-    @SideOnly(Side.SERVER)
     @SubscribeEvent
     public void onMoveItem(PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.START && event.side == Side.SERVER) {

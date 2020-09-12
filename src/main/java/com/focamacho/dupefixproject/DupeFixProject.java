@@ -1,14 +1,16 @@
 package com.focamacho.dupefixproject;
 
 import com.focamacho.dupefixproject.event.*;
+import com.focamacho.dupefixproject.util.LoadedFixes;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.DummyModContainer;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,15 +31,15 @@ public class DupeFixProject {
         if(Loader.isModLoaded("projectred-exploration")) {
             MinecraftForge.EVENT_BUS.register(new ProjectRedWorldFixes());
         }
-        if(Loader.isModLoaded("bloodmagic")) {
+        if(LoadedFixes.bloodMagic) {
             MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
         }
         if(Loader.isModLoaded("tconstruct")) {
             MinecraftForge.EVENT_BUS.register(new TConstructFixes());
         }
-        if(Loader.isModLoaded("thaumcraft")) {
+        if(LoadedFixes.thaumcraft) {
             MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
         }
     }
-    
+
 }
