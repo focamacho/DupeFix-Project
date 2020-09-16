@@ -25,7 +25,7 @@ public class LoadedFixes {
         if(Loader.isModLoaded("spiceoflife") && !LoadedFixes.spiceOfLife) modFixesNotLoaded += "Spice of Life, ";
         if(Loader.isModLoaded("netherchest") && !LoadedFixes.netherChest) modFixesNotLoaded += "NetherChest, ";
         if(Loader.isModLoaded("enderio") && !LoadedFixes.enderio) modFixesNotLoaded += "EnderIO, ";
-        return modFixesNotLoaded.substring(0, modFixesNotLoaded.length() - 2);
+        return modFixesNotLoaded.isEmpty() ? "" : modFixesNotLoaded.substring(0, modFixesNotLoaded.length() - 2);
     }
 
 }
