@@ -19,6 +19,7 @@ public class DupeFixProjectConfig {
     public static String industrialForegoing = "";
     public static String actuallyAdditions = "";
     public static String extraUtilities = "";
+    public static String comment = "Visit the wiki to learn how to configure it: https://github.com/Focamacho/DupeFix-Project/wiki";
 
     public static void initConfigs() throws IOException {
         JSONObject json = JsonHandler.getOrCreateJson(configFile);
@@ -32,6 +33,7 @@ public class DupeFixProjectConfig {
         industrialForegoing = JsonHandler.getOrCreateString(configFile, "industrialForegoing", "");
         actuallyAdditions = JsonHandler.getOrCreateString(configFile, "actuallyAdditions", "");
         extraUtilities = JsonHandler.getOrCreateString(configFile, "extraUtilities", "");
+        comment = JsonHandler.getOrCreateString(configFile, "_comment", comment);
     }
 
 }
