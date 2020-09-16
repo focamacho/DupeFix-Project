@@ -16,15 +16,15 @@ public class LoadedFixes {
 
     public static String getModFixesNotLoaded() {
         String modFixesNotLoaded = "";
-        if(Loader.isModLoaded("thaumcraft") && LoadedFixes.thaumcraft) modFixesNotLoaded += "Thaumcraft, ";
-        if(Loader.isModLoaded("bloodmagic") && LoadedFixes.bloodMagic) modFixesNotLoaded += "Blood Magic, ";
-        if(Loader.isModLoaded("xu2") && LoadedFixes.extraUtilities) modFixesNotLoaded += "Extra Utilities 2, ";
-        if(Loader.isModLoaded("actuallyadditions") && LoadedFixes.actuallyAdditions) modFixesNotLoaded += "Actually Additions, ";
-        if(Loader.isModLoaded("industrialforegoing") && LoadedFixes.industrialForegoing) modFixesNotLoaded += "Industrial Foregoing, ";
-        if(Loader.isModLoaded("tp") && LoadedFixes.tinyProgressions) modFixesNotLoaded += "Tiny Progressions, ";
-        if(Loader.isModLoaded("spiceoflife") && LoadedFixes.spiceOfLife) modFixesNotLoaded += "Spice of Life, ";
-        if(Loader.isModLoaded("netherchest") && LoadedFixes.netherChest) modFixesNotLoaded += "NetherChest, ";
-        if(Loader.isModLoaded("enderio") && LoadedFixes.enderio) modFixesNotLoaded += "EnderIO, ";
+        if(Loader.isModLoaded("thaumcraft") && !LoadedFixes.thaumcraft) modFixesNotLoaded += "Thaumcraft, ";
+        if(Loader.isModLoaded("bloodmagic") && !LoadedFixes.bloodMagic) modFixesNotLoaded += "Blood Magic, ";
+        if(Loader.isModLoaded("xu2") && !LoadedFixes.extraUtilities) modFixesNotLoaded += "Extra Utilities 2, ";
+        if(Loader.isModLoaded("actuallyadditions") && !LoadedFixes.actuallyAdditions) modFixesNotLoaded += "Actually Additions, ";
+        if(Loader.isModLoaded("industrialforegoing") && !LoadedFixes.industrialForegoing) modFixesNotLoaded += "Industrial Foregoing, ";
+        if(Loader.isModLoaded("tp") && !LoadedFixes.tinyProgressions) modFixesNotLoaded += "Tiny Progressions, ";
+        if(Loader.isModLoaded("spiceoflife") && !LoadedFixes.spiceOfLife) modFixesNotLoaded += "Spice of Life, ";
+        if(Loader.isModLoaded("netherchest") && !LoadedFixes.netherChest) modFixesNotLoaded += "NetherChest, ";
+        if(Loader.isModLoaded("enderio") && !LoadedFixes.enderio) modFixesNotLoaded += "EnderIO, ";
         return modFixesNotLoaded.substring(0, modFixesNotLoaded.length() - 2);
     }
 
