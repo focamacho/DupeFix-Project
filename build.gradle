@@ -134,6 +134,9 @@ dependencies {
     //Botania
     compileOnly("curse.maven:botania:2846950")
 
+    //The Farlanders
+    compileOnly("curse.maven:thefarlanders:2805139")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false

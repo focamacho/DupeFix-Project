@@ -88,6 +88,13 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         } else {
             DupeFixProject.logger.error("Couldn't load fixes for Extra Utilities. If the mod is present, check your configuration file.");
         }
+        if(loadJar(DupeFixProjectConfig.theFarlanders)) {
+            LoadedFixes.theFarlanders = true;
+            DupeFixProject.logger.info("Initializing The Farlanders Fixes");
+            Mixins.addConfiguration("mixins/mixins.dupefixproject.thefarlanders.json");
+        } else {
+            DupeFixProject.logger.error("Couldn't load fixes for The Farlanders. If the mod is present, check your configuration file.");
+        }
 
         MixinBootstrap.init();
     }

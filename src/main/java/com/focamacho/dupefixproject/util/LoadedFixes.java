@@ -13,6 +13,7 @@ public class LoadedFixes {
     public static boolean thaumcraft = false;
     public static boolean tinyProgressions = false;
     public static boolean enderio = false;
+    public static boolean theFarlanders = false;
 
     public static String getModFixesNotLoaded() {
         String modFixesNotLoaded = "";
@@ -25,6 +26,7 @@ public class LoadedFixes {
         if(Loader.isModLoaded("spiceoflife") && !LoadedFixes.spiceOfLife) modFixesNotLoaded += "Spice of Life, ";
         if(Loader.isModLoaded("netherchest") && !LoadedFixes.netherChest) modFixesNotLoaded += "NetherChest, ";
         if(Loader.isModLoaded("enderio") && !LoadedFixes.enderio) modFixesNotLoaded += "EnderIO, ";
+        if(Loader.isModLoaded("farlanders") && !LoadedFixes.theFarlanders) modFixesNotLoaded += "The Farlanders, ";
         return modFixesNotLoaded.isEmpty() ? "" : modFixesNotLoaded.substring(0, modFixesNotLoaded.length() - 2);
     }
 
