@@ -18,7 +18,7 @@ public class LoadedFixes {
         String modFixesNotLoaded = "";
         if(Loader.isModLoaded("thaumcraft") && !LoadedFixes.thaumcraft) modFixesNotLoaded += "Thaumcraft, ";
         if(Loader.isModLoaded("bloodmagic") && !LoadedFixes.bloodMagic) modFixesNotLoaded += "Blood Magic, ";
-        if(Loader.isModLoaded("xu2") && !LoadedFixes.extraUtilities) modFixesNotLoaded += "Extra Utilities 2, ";
+        if(Loader.isModLoaded("extrautils2") && !LoadedFixes.extraUtilities) modFixesNotLoaded += "Extra Utilities 2, ";
         if(Loader.isModLoaded("actuallyadditions") && !LoadedFixes.actuallyAdditions) modFixesNotLoaded += "Actually Additions, ";
         if(Loader.isModLoaded("industrialforegoing") && !LoadedFixes.industrialForegoing) modFixesNotLoaded += "Industrial Foregoing, ";
         if(Loader.isModLoaded("tp") && !LoadedFixes.tinyProgressions) modFixesNotLoaded += "Tiny Progressions, ";
