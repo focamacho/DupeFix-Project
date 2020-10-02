@@ -95,6 +95,13 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         } else {
             DupeFixProject.logger.error("Couldn't load fixes for The Farlanders. If the mod is present, check your configuration file.");
         }
+        if(loadJar(DupeFixProjectConfig.thaumicWonders)) {
+            LoadedFixes.thaumicWonders = true;
+            DupeFixProject.logger.info("Initializing Thaumic Wonders Fixes");
+            Mixins.addConfiguration("mixins/mixins.dupefixproject.thaumicwonders.json");
+        } else {
+            DupeFixProject.logger.error("Couldn't load fixes for Thaumic Wonders. If the mod is present, check your configuration file.");
+        }
 
         MixinBootstrap.init();
     }

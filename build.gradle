@@ -137,6 +137,9 @@ dependencies {
     //The Farlanders
     compileOnly("curse.maven:thefarlanders:2805139")
 
+    //Thaumic Wonders
+    compileOnly("curse.maven:thaumicwonders:2787954")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false
