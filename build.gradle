@@ -19,7 +19,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "3.0.2"
+version = "3.0.3"
 group = "com.focamacho.dupefixproject"
 archivesBaseName = "DupeFixProject-1.12.2"
 
