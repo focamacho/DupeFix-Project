@@ -15,6 +15,7 @@ public class LoadedFixes {
     public static boolean enderio = false;
     public static boolean theFarlanders = false;
     public static boolean thaumicWonders = false;
+    public static boolean forestry = false;
 
     public static String getModFixesNotLoaded() {
         String modFixesNotLoaded = "";
@@ -31,6 +32,7 @@ public class LoadedFixes {
         if(Loader.isModLoaded("netherchest") && !LoadedFixes.netherChest) modFixesNotLoaded += "NetherChest, ";
         if(Loader.isModLoaded("farlanders") && !LoadedFixes.theFarlanders) modFixesNotLoaded += "The Farlanders, ";
         if(Loader.isModLoaded("thaumicwonders") && !LoadedFixes.thaumicWonders) modFixesNotLoaded += "Thaumic Wonders, ";
+        if(Loader.isModLoaded("forestry") && !LoadedFixes.forestry) modFixesNotLoaded += "Forestry, ";
         return modFixesNotLoaded.isEmpty() ? "" : modFixesNotLoaded.substring(0, modFixesNotLoaded.length() - 2);
     }
 

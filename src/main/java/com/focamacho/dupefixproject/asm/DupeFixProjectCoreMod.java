@@ -26,82 +26,20 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
             e.printStackTrace();
         }
 
-        if(loadJar(DupeFixProjectConfig.bloodMagic)) {
-            LoadedFixes.bloodMagic = true;
-            DupeFixProject.logger.info("Initializing Blood Magic Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.bloodmagic.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Blood Magic. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.netherChest)) {
-            LoadedFixes.netherChest = true;
-            DupeFixProject.logger.info("Initializing Nether Chest Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.netherchest.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Nether Chest. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.spiceOfLife)) {
-            LoadedFixes.spiceOfLife = true;
-            DupeFixProject.logger.info("Initializing Spice of Life Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.spiceoflife.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Spice of Life. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.thaumcraft)) {
+        if(loadJar(DupeFixProjectConfig.bloodMagic, "Blood Magic", "mixins.dupefixproject.bloodmagic.json")) LoadedFixes.bloodMagic = true;
+        if(loadJar(DupeFixProjectConfig.netherChest, "Nether Chest", "mixins.dupefixproject.netherchest.json")) LoadedFixes.netherChest = true;
+        if(loadJar(DupeFixProjectConfig.spiceOfLife, "Spice of Life", "mixins.dupefixproject.spiceoflife.json")) LoadedFixes.spiceOfLife = true;
+        if(loadJar(DupeFixProjectConfig.thaumcraft, "Thaumcraft", "mixins.dupefixproject.thaumcraft.json")) {
             LoadedFixes.thaumcraft = true;
-            DupeFixProject.logger.info("Initializing Thaumcraft Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.thaumcraft.json");
-            if(loadJar(DupeFixProjectConfig.enderio)) {
-                LoadedFixes.enderio = true;
-                Mixins.addConfiguration("mixins/mixins.dupefixproject.thaumcraft.enderio.json");
-            } else {
-                DupeFixProject.logger.error("Couldn't load fixes for EnderIO. If the mod is present, check your configuration file.");
-            }
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Thaumcraft. If the mod is present, check your configuration file.");
+            if (loadJar(DupeFixProjectConfig.enderio, "EnderIO", "mixins.dupefixproject.thaumcraft.enderio.json")) LoadedFixes.enderio = true;
         }
-        if(loadJar(DupeFixProjectConfig.tinyProgressions))  {
-            LoadedFixes.tinyProgressions = true;
-            DupeFixProject.logger.info("Initializing Tiny Progressions Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.tp.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Tiny Progressions. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.industrialForegoing))  {
-            LoadedFixes.industrialForegoing = true;
-            DupeFixProject.logger.info("Initializing Industrial Foregoing Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.industrialforegoing.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Industrial Foregoing. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.actuallyAdditions)) {
-            LoadedFixes.actuallyAdditions = true;
-            DupeFixProject.logger.info("Initializing Actually Additions Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.actuallyadditions.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Actually Additions. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.extraUtilities)) {
-            LoadedFixes.extraUtilities = true;
-            DupeFixProject.logger.info("Initializing Extra Utilities Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.extrautilities.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Extra Utilities. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.theFarlanders)) {
-            LoadedFixes.theFarlanders = true;
-            DupeFixProject.logger.info("Initializing The Farlanders Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.thefarlanders.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for The Farlanders. If the mod is present, check your configuration file.");
-        }
-        if(loadJar(DupeFixProjectConfig.thaumicWonders)) {
-            LoadedFixes.thaumicWonders = true;
-            DupeFixProject.logger.info("Initializing Thaumic Wonders Fixes");
-            Mixins.addConfiguration("mixins/mixins.dupefixproject.thaumicwonders.json");
-        } else {
-            DupeFixProject.logger.error("Couldn't load fixes for Thaumic Wonders. If the mod is present, check your configuration file.");
-        }
+        if(loadJar(DupeFixProjectConfig.tinyProgressions, "Tiny Progressions", "mixins.dupefixproject.tp.json")) LoadedFixes.tinyProgressions = true;
+        if(loadJar(DupeFixProjectConfig.industrialForegoing, "Industrial Foregoing", "mixins.dupefixproject.industrialforegoing.json")) LoadedFixes.industrialForegoing = true;
+        if(loadJar(DupeFixProjectConfig.actuallyAdditions, "Actually Additions", "mixins.dupefixproject.actuallyadditions.json")) LoadedFixes.actuallyAdditions = true;
+        if(loadJar(DupeFixProjectConfig.extraUtilities, "Extra Utilities", "mixins.dupefixproject.extrautilities.json")) LoadedFixes.extraUtilities = true;
+        if(loadJar(DupeFixProjectConfig.theFarlanders, "The Farlanders", "mixins.dupefixproject.thefarlanders.json")) LoadedFixes.theFarlanders = true;
+        if(loadJar(DupeFixProjectConfig.thaumicWonders, "Thaumic Wonders", "mixins.dupefixproject.thaumicwonders.json")) LoadedFixes.thaumicWonders = true;
+        if(loadJar(DupeFixProjectConfig.forestry, "Forestry", "mixins.dupefixproject.forestry.json")) LoadedFixes.forestry = true;
 
         MixinBootstrap.init();
     }
@@ -130,14 +68,23 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         return null;
     }
 
-    private boolean loadJar(String jar) {
-        if(jar.isEmpty()) return false;
+    private boolean loadJar(String jar, String name, String mixin) {
+        if(jar.isEmpty()) {
+            DupeFixProject.logger.error("Couldn't load fixes for " + name + ". If the mod is present, check your configuration file.");
+            return false;
+        }
         File file = new File("mods", jar);
-        if(!file.exists()) return false;
+        if(!file.exists()) {
+            DupeFixProject.logger.error("Couldn't load fixes for " + name + ". If the mod is present, check your configuration file.");
+            return false;
+        }
         try {
             loadJar(file);
+            DupeFixProject.logger.info("Initializing " + name + " Fixes");
+            Mixins.addConfiguration("mixins/" + mixin);
             return true;
         } catch(Exception e) {
+            DupeFixProject.logger.error("Couldn't load fixes for " + name + ". If the mod is present, check your configuration file.");
             return false;
         }
     }

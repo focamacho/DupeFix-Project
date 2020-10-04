@@ -19,7 +19,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "3.0.3"
+version = "3.0.4"
 group = "com.focamacho.dupefixproject"
 archivesBaseName = "DupeFixProject-1.12.2"
 
@@ -139,6 +139,9 @@ dependencies {
 
     //Thaumic Wonders
     compileOnly("curse.maven:thaumicwonders:2787954")
+
+    //Forestry
+    compileOnly("curse.maven:forestry:2918418")
 
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
