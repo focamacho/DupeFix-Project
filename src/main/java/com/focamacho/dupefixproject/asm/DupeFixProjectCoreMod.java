@@ -40,6 +40,7 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         if(loadJar(DupeFixProjectConfig.theFarlanders, "The Farlanders", "mixins.dupefixproject.thefarlanders.json")) LoadedFixes.theFarlanders = true;
         if(loadJar(DupeFixProjectConfig.thaumicWonders, "Thaumic Wonders", "mixins.dupefixproject.thaumicwonders.json")) LoadedFixes.thaumicWonders = true;
         if(loadJar(DupeFixProjectConfig.forestry, "Forestry", "mixins.dupefixproject.forestry.json")) LoadedFixes.forestry = true;
+        if(loadJar(DupeFixProjectConfig.thermalExpansion, "Thermal Expansion", "mixins.dupefixproject.thermalexpansion.json")) LoadedFixes.thermalExpansion = true;
 
         MixinBootstrap.init();
     }
