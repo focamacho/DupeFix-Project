@@ -83,65 +83,71 @@ repositories {
 
 dependencies {
     //Tiny Progressions
-    compileOnly("curse.maven:tinyprogressions:2721018")
+    compileOnly("curse.maven:tinyprogressions-250850:2721018")
 
     //The Spice of Life + Dependencies
-    compileOnly("curse.maven:thespiceoflife:2571951")
-    compileOnly("curse.maven:applecore:2969118")
+    compileOnly("curse.maven:thespiceoflife-220811:2571951")
+    compileOnly("curse.maven:applecore-224472:2969118")
 
     //Nether Chest
-    compileOnly("curse.maven:netherchest:2655413")
+    compileOnly("curse.maven:netherchest-268888:2655413")
 
     //Mekanism
-    compileOnly("curse.maven:mekanism:2835175")
+    compileOnly("curse.maven:mekanism-268560:2835175")
 
     //Project Red World + Dependencies
-    compileOnly("curse.maven:projectredworld:2745551")
-    compileOnly("curse.maven:projectredbase:2745545")
-    compileOnly("curse.maven:codechickenlib:2779848")
-    compileOnly("curse.maven:forgemultipartcbe:2755790")
-    compileOnly("curse.maven:mrtjpcore:2735197")
+    compileOnly("curse.maven:projectredworld-229049:2745551")
+    compileOnly("curse.maven:projectredbase-228702:2745545")
+    compileOnly("curse.maven:codechickenlib-242818:2779848")
+    compileOnly("curse.maven:forgemultipartcbe-258426:2755790")
+    compileOnly("curse.maven:mrtjpcore-229002:2735197")
 
     //Blood Magic + Dependencies
-    compileOnly("curse.maven:bloodmagic:2822288")
-    compileOnly("curse.maven:guideapi:2645992")
+    compileOnly("curse.maven:bloodmagic-224791:2822288")
+    compileOnly("curse.maven:guideapi-228832:2645992")
 
     //Thaumcraft + Dependencies
-    compileOnly("curse.maven:thaumcraft:2629023")
-    compileOnly("curse.maven:baubles:2518667")
+    compileOnly("curse.maven:thaumcraft-223628:2629023")
+    compileOnly("curse.maven:baubles-227083:2518667")
 
     //EnderIO + Dependencies
-    compileOnly("curse.maven:enderio:2989201")
-    compileOnly("curse.maven:endercore:2972849")
+    compileOnly("curse.maven:enderio-64578:2989201")
+    compileOnly("curse.maven:endercore-231868:2972849")
 
     //Tinkers' Construct + Dependencies
-    compileOnly("curse.maven:tconstruct:2902483")
-    compileOnly("curse.maven:mantle:2713386")
+    compileOnly("curse.maven:tconstruct-74072:2902483")
+    compileOnly("curse.maven:mantle-74924:2713386")
 
     //Actually Additions
-    compileOnly("curse.maven:actuallyaditions:2844115")
+    compileOnly("curse.maven:actuallyaditions-228404:2844115")
 
     //Industrial Foregoing + Dependencies
-    compileOnly("curse.maven:industrialforegoing:2745324")
-    compileOnly("curse.maven:teslacorelib:2891841")
+    compileOnly("curse.maven:industrialforegoing-266515:2745324")
+    compileOnly("curse.maven:teslacorelib-254602:2891841")
 
     //Extra Utilities
-    compileOnly("curse.maven:extrautilities:2678374")
+    compileOnly("curse.maven:extrautilities-225561:2678374")
 
     //Bewitchment
-    compileOnly("curse.maven:bewitchment:3044569")
+    compileOnly("curse.maven:bewitchment-285439:3044569")
 
     //Botania
-    compileOnly("curse.maven:botania:2846950")
+    compileOnly("curse.maven:botania-225643:2846950")
 
     //The Farlanders
-    compileOnly("curse.maven:thefarlanders:2805139")
+    compileOnly("curse.maven:thefarlanders-336432:2805139")
 
     //Thaumic Wonders
-    compileOnly("curse.maven:thaumicwonders:2787954")
+    compileOnly("curse.maven:thaumicwonders-316704:2787954")
 
     //Forestry
-    compileOnly("curse.maven:forestry:2918418")
+    compileOnly("curse.maven:forestry-59751:2918418")
+
+    //Thermal Expansion + Dependencies
+    compileOnly("curse.maven:thermalexpansion-69163:2926431")
+    compileOnly("curse.maven:thermalfoundation-222880:2926428")
+    compileOnly("curse.maven:cofhcore-69162:2920433")
+    compileOnly("curse.maven:cofhworld-271384:2920434")
 
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {

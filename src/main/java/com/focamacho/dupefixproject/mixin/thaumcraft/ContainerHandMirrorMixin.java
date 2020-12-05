@@ -10,12 +10,12 @@ import thaumcraft.common.container.ContainerHandMirror;
 
 @Mixin(ContainerHandMirror.class)
 public class ContainerHandMirrorMixin {
-    @Redirect(method = "<init>", at = @At(
-            value = "INVOKE", target = "Lnet/minecraft/entity/player/InventoryPlayer;getCurrentItem()Lnet/minecraft/item/ItemStack;"))
+
+    @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/InventoryPlayer;getCurrentItem()Lnet/minecraft/item/ItemStack;"))
     private ItemStack getCurrentItem(InventoryPlayer iinventory) {
         ItemStack mirror = iinventory.player.getHeldItemMainhand();
-        if (!mirror.getItem().equals(ItemsTC.handMirror) || !mirror.hasTagCompound())
-            mirror = iinventory.player.getHeldItemOffhand();
+        if (!mirror.getItem().equals(ItemsTC.handMirror) || !mirror.hasTagCompound()) mirror = iinventory.player.getHeldItemOffhand();
         return mirror;
     }
+
 }
