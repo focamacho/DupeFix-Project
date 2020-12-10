@@ -2,6 +2,7 @@ package com.focamacho.dupefixproject;
 
 import com.focamacho.dupefixproject.event.*;
 import com.focamacho.dupefixproject.util.LoadedFixes;
+import com.focamacho.dupefixproject.util.ModHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +22,7 @@ public class DupeFixProject {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+
         MinecraftForge.EVENT_BUS.register(new VanillaFixes());
 
         if(Loader.isModLoaded("mekanism")) {
