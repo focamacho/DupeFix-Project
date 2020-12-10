@@ -17,13 +17,23 @@ public class ModHandler {
     static{
 
         File folder = new File("mods");
+        scan(folder);
+
+    }
+
+    private static void scan(File folder){
 
         if(folder.exists() && folder.isDirectory() && folder.listFiles() != null){
 
-            File[] mods = folder.listFiles(f -> f.getName().endsWith(".jar"));
+            File[] mods = folder.listFiles(f -> f.getName().endsWith(".jar") || f.isDirectory());
 
             if(mods != null) {
                 for (File mod : mods) {
+
+                    if(mod.isDirectory()){
+                        scan(mod);
+                    }
+
                     try {
 
                         String modid = getModID(mod);
@@ -98,6 +108,10 @@ public class ModHandler {
     private static void loadJar(File jar) throws MalformedURLException {
         ((LaunchClassLoader) ModHandler.class.getClassLoader()).addURL(jar.toURI().toURL());
         CoreModManager.getReparseableCoremods().add(jar.getName());
+    }
+
+    public static void clear(){
+        cachedMods.clear();
     }
 
 }
