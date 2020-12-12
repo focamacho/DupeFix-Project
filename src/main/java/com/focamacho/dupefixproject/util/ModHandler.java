@@ -14,34 +14,24 @@ public class ModHandler {
 
     private static final HashMap<String, File> cachedMods = new HashMap<>();
 
-    static{
-
+    static {
         File folder = new File("mods");
         scan(folder);
-
     }
 
-    private static void scan(File folder){
-
-        if(folder.exists() && folder.isDirectory() && folder.listFiles() != null){
-
+    private static void scan(File folder) {
+        if(folder.exists() && folder.isDirectory() && folder.listFiles() != null) {
             File[] mods = folder.listFiles(f -> f.getName().endsWith(".jar") || f.isDirectory());
-
             if(mods != null) {
                 for (File mod : mods) {
-
-                    if(mod.isDirectory()){
+                    if(mod.isDirectory() && mod.getName().equals("1.12.2")){
                         scan(mod);
                     }
-
                     try {
-
                         String modid = getModID(mod);
-
-                        if(modid != null){
+                        if(modid != null) {
                             cachedMods.put(modid, mod);
                         }
-
                     } catch (IOException ignored) {}
                 }
             }
@@ -49,22 +39,14 @@ public class ModHandler {
     }
 
     private static String getModID(File file) throws IOException {
-
         ZipFile zipFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> zipEntryEnumeration = zipFile.entries();
-
         while (zipEntryEnumeration.hasMoreElements()){
-
            ZipEntry zipEntry = zipEntryEnumeration.nextElement();
-
            if(zipEntry != null && zipEntry.getName().equalsIgnoreCase("mcmod.info")){
-
                InputStream inputStream = zipFile.getInputStream(zipEntry);
-
                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-
                String read;
-
                while ((read = bufferedReader.readLine()) != null){
                    if(read.contains("\"modid\"")){
                        return read
@@ -81,7 +63,6 @@ public class ModHandler {
                }
            }
         }
-
         return null;
     }
 
@@ -89,18 +70,15 @@ public class ModHandler {
         return cachedMods.containsKey(modid);
     }
 
-    public static boolean load(String modid){
-
-        if(!isPresent(modid)){
+    public static boolean load(String modid) {
+        if(!isPresent(modid)) {
             return false;
         }
-
-        try{
+        try {
             loadJar(cachedMods.get(modid));
         } catch (MalformedURLException ignored) {
             return false;
         }
-
         return true;
 
     }
@@ -110,7 +88,7 @@ public class ModHandler {
         CoreModManager.getReparseableCoremods().add(jar.getName());
     }
 
-    public static void clear(){
+    public static void clear() {
         cachedMods.clear();
     }
 
