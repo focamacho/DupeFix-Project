@@ -1,6 +1,6 @@
 package com.focamacho.dupefixproject.asm;
 
-import com.focamacho.dupefixproject.config.DupeFixProjectConfig;
+import com.focamacho.dupefixproject.DupeFixProject;
 import com.focamacho.dupefixproject.util.LoadedFixes;
 import com.focamacho.dupefixproject.util.ModHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
@@ -8,7 +8,6 @@ import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
 
 import javax.annotation.Nullable;
-import java.io.IOException;
 import java.util.Map;
 
 @IFMLLoadingPlugin.SortingIndex(731)
@@ -16,13 +15,6 @@ import java.util.Map;
 public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
 
     public DupeFixProjectCoreMod() {
-
-        try {
-            DupeFixProjectConfig.initConfigs();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         LoadedFixes.bloodMagic          = loadMixin("mixins.dupefixproject.bloodmagic.json",            "bloodmagic");
         LoadedFixes.netherChest         = loadMixin("mixins.dupefixproject.netherchest.json",           "netherchest");
         LoadedFixes.spiceOfLife         = loadMixin("mixins.dupefixproject.spiceoflife.json",           "spiceoflife");
@@ -66,12 +58,10 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
     }
 
     private boolean loadMixin(String mixin, String modid){
-
         if(ModHandler.load(modid)){
             Mixins.addConfiguration("mixins/" + mixin);
             return true;
         }
-
         return false;
     }
 
