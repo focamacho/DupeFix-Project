@@ -1,6 +1,5 @@
 package com.focamacho.dupefixproject.asm;
 
-import com.focamacho.dupefixproject.DupeFixProject;
 import com.focamacho.dupefixproject.util.LoadedFixes;
 import com.focamacho.dupefixproject.util.ModHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;

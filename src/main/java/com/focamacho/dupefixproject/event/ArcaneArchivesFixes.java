@@ -1,5 +1,7 @@
 package com.focamacho.dupefixproject.event;
 
+import com.aranaira.arcanearchives.blocks.RadiantCraftingTable;
+import com.aranaira.arcanearchives.inventory.ContainerRadiantCraftingTable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -7,8 +9,6 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
-import com.aranaira.arcanearchives.blocks.RadiantCraftingTable;
-import com.aranaira.arcanearchives.inventory.ContainerRadiantCraftingTable;
 
 import java.util.List;
 

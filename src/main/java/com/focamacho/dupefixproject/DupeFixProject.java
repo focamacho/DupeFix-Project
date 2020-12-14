@@ -31,19 +31,20 @@ public class DupeFixProject {
             MinecraftForge.EVENT_BUS.register(new ProjectRedWorldFixes());
             LoadedFixes.projectRedExploration = true;
         }
-        if(LoadedFixes.bloodMagic) {
-            MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
-        }
         if(Loader.isModLoaded("tconstruct")) {
             MinecraftForge.EVENT_BUS.register(new TConstructFixes());
             LoadedFixes.tconstruct = true;
         }
-        if(LoadedFixes.thaumcraft) {
-            MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
-        }
 		if(Loader.isModLoaded("arcanearchives")) {
             MinecraftForge.EVENT_BUS.register(new ArcaneArchivesFixes());
             LoadedFixes.arcaneArchives = true;
+        }
+
+        if(LoadedFixes.thaumcraft) {
+            MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
+        }
+        if(LoadedFixes.bloodMagic) {
+            MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
         }
 
         LoadedFixes.sendLoadedFixesLog();
