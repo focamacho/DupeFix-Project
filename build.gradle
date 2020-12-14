@@ -82,6 +82,9 @@ repositories {
 }
 
 dependencies {
+	//Arcane Archives
+    compileOnly("curse.maven:arcane-archives-311357:3057332")
+	
     //Tiny Progressions
     compileOnly("curse.maven:tinyprogressions-250850:2721018")
 
