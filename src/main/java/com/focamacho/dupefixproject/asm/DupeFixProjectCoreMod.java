@@ -28,6 +28,7 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         LoadedFixes.thaumicWonders      = loadMixin("mixins.dupefixproject.thaumicwonders.json",        "thaumicwonders");
         LoadedFixes.forestry            = loadMixin("mixins.dupefixproject.forestry.json",              "forestry");
         LoadedFixes.thermalExpansion    = loadMixin("mixins.dupefixproject.thermalexpansion.json",      "thermalexpansion");
+		LoadedFixes.arcaneArchives      = loadMixin("mixins.dupefixproject.arcanearchives.json",        "arcanearchives");
 
         MixinBootstrap.init();
         ModHandler.clear();

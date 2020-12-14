@@ -20,6 +20,7 @@ public class LoadedFixes {
     public static boolean mekanism = false;
     public static boolean projectRedExploration = false;
     public static boolean tconstruct = false;
+	public static boolean arcaneArchives = false;
 
     public static void sendLoadedFixesLog() {
         sendLog(actuallyAdditions, "Actually Additions");
@@ -38,6 +39,7 @@ public class LoadedFixes {
         sendLog(mekanism, "Mekanism");
         sendLog(projectRedExploration, "Project Red: World");
         sendLog(tconstruct, "Tinkers' Construct");
+		sendLog(arcaneArchives, "Arcane Archives");
     }
 
     private static void sendLog(boolean loaded, String modName) {

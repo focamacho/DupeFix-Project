@@ -41,6 +41,10 @@ public class DupeFixProject {
         if(LoadedFixes.thaumcraft) {
             MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
         }
+		if(Loader.isModLoaded("arcanearchives")) {
+            MinecraftForge.EVENT_BUS.register(new ArcaneArchivesFixes());
+            LoadedFixes.arcaneArchives = true;
+        }
 
         LoadedFixes.sendLoadedFixesLog();
     }
