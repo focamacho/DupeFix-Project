@@ -19,6 +19,10 @@ import java.util.List;
 
 public class MekanismFixes {
 
+    static {
+        init();
+    }
+
     //Personal Chest Dupe Fix
     @SubscribeEvent
     public void onMoveItem(PlayerTickEvent event) {
@@ -33,7 +37,7 @@ public class MekanismFixes {
                     if (player.getEntityData().hasKey("PersonalChestDupeFix"))
                         player.getEntityData().removeTag("PersonalChestDupeFix");
                     List<Slot> inventorySlots = player.inventoryContainer.inventorySlots;
-                    List<Integer> slotsChest = new ArrayList<Integer>();
+                    List<Integer> slotsChest = new ArrayList<>();
                     for (Slot slot : inventorySlots) {
                         if (ItemStack.areItemsEqual(slot.getStack(), new ItemStack(MekanismBlocks.MachineBlock, 1, 13))) {
                             slotsChest.add(slot.slotNumber);
@@ -69,4 +73,5 @@ public class MekanismFixes {
             }
         }
     }
+
 }
