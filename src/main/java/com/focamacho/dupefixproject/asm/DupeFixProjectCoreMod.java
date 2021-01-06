@@ -14,21 +14,21 @@ import java.util.Map;
 public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
 
     public DupeFixProjectCoreMod() {
-        LoadedFixes.bloodMagic          = loadMixin("mixins.dupefixproject.bloodmagic.json",            "bloodmagic");
-        LoadedFixes.netherChest         = loadMixin("mixins.dupefixproject.netherchest.json",           "netherchest");
-        LoadedFixes.spiceOfLife         = loadMixin("mixins.dupefixproject.spiceoflife.json",           "spiceoflife");
-        LoadedFixes.thaumcraft          = loadMixin("mixins.dupefixproject.thaumcraft.json",            "thaumcraft");      if(LoadedFixes.thaumcraft)
-        LoadedFixes.enderio             = loadMixin("mixins.dupefixproject.thaumcraft.enderio.json",    "enderio");
-        LoadedFixes.tinyProgressions    = loadMixin("mixins.dupefixproject.tp.json",                    "tp");
-        LoadedFixes.industrialForegoing = loadMixin("mixins.dupefixproject.industrialforegoing.json",   "industrialforegoing");
-        LoadedFixes.actuallyAdditions   = loadMixin("mixins.dupefixproject.actuallyadditions.json",     "actuallyadditions");
-        LoadedFixes.extraUtilities      = loadMixin("mixins.dupefixproject.extrautilities.json",        "extrautils2");
-        LoadedFixes.theFarlanders       = loadMixin("mixins.dupefixproject.thefarlanders.json",         "farlanders");
-        LoadedFixes.thaumicWonders      = loadMixin("mixins.dupefixproject.thaumicwonders.json",        "thaumicwonders");
-        LoadedFixes.forestry            = loadMixin("mixins.dupefixproject.forestry.json",              "forestry");
-        LoadedFixes.thermalExpansion    = loadMixin("mixins.dupefixproject.thermalexpansion.json",      "thermalexpansion");
-		LoadedFixes.arcaneArchives      = loadMixin("mixins.dupefixproject.arcanearchives.json",        "arcanearchives");      if(ModHandler.load("chisel"))
-		LoadedFixes.tcomplement         = loadMixin("mixins.dupefixproject.chisel.tcomplement.json",    "tcomplement");
+        LoadedFixes.bloodMagic = loadMixin("mixins.dupefixproject.bloodmagic.json", "bloodmagic");
+        LoadedFixes.netherChest = loadMixin("mixins.dupefixproject.netherchest.json", "netherchest");
+        LoadedFixes.spiceOfLife = loadMixin("mixins.dupefixproject.spiceoflife.json", "spiceoflife");
+        LoadedFixes.thaumcraft = loadMixin("mixins.dupefixproject.thaumcraft.json", "thaumcraft");
+        if(LoadedFixes.thaumcraft) LoadedFixes.enderio = loadMixin("mixins.dupefixproject.thaumcraft.enderio.json", "enderio");
+        LoadedFixes.tinyProgressions = loadMixin("mixins.dupefixproject.tp.json", "tp");
+        LoadedFixes.industrialForegoing = loadMixin("mixins.dupefixproject.industrialforegoing.json", "industrialforegoing");
+        LoadedFixes.actuallyAdditions = loadMixin("mixins.dupefixproject.actuallyadditions.json", "actuallyadditions");
+        LoadedFixes.extraUtilities = loadMixin("mixins.dupefixproject.extrautilities.json", "extrautils2");
+        LoadedFixes.theFarlanders = loadMixin("mixins.dupefixproject.thefarlanders.json", "farlanders");
+        LoadedFixes.thaumicWonders = loadMixin("mixins.dupefixproject.thaumicwonders.json", "thaumicwonders");
+        LoadedFixes.forestry = loadMixin("mixins.dupefixproject.forestry.json", "forestry");
+        LoadedFixes.thermalExpansion = loadMixin("mixins.dupefixproject.thermalexpansion.json", "thermalexpansion");
+        LoadedFixes.arcaneArchives = loadMixin("mixins.dupefixproject.arcanearchives.json", "arcanearchives");
+        if(ModHandler.load("chisel")) LoadedFixes.tcomplement = loadMixin("mixins.dupefixproject.chisel.tcomplement.json", "tcomplement");
 
         MixinBootstrap.init();
         ModHandler.clear();

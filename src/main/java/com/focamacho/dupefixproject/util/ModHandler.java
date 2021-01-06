@@ -42,26 +42,26 @@ public class ModHandler {
         ZipFile zipFile = new ZipFile(file);
         Enumeration<? extends ZipEntry> zipEntryEnumeration = zipFile.entries();
         while (zipEntryEnumeration.hasMoreElements()){
-           ZipEntry zipEntry = zipEntryEnumeration.nextElement();
-           if(zipEntry != null && zipEntry.getName().equalsIgnoreCase("mcmod.info")){
-               InputStream inputStream = zipFile.getInputStream(zipEntry);
-               BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-               String read;
-               while ((read = bufferedReader.readLine()) != null){
-                   if(read.contains("\"modid\"")){
-                       return read
-                               .replace("\"",       "")
-                               .replace("modid",    "")
-                               .replace(":",        "")
-                               .replace(",",        "")
-                               .replace("\t",       "")
-                               .replace("\n",       "")
-                               .replace(" ",        "")
-                               .replace("{",        "")
-                               .replace("}",        "");
-                   }
-               }
-           }
+            ZipEntry zipEntry = zipEntryEnumeration.nextElement();
+            if(zipEntry != null && zipEntry.getName().equalsIgnoreCase("mcmod.info")){
+                InputStream inputStream = zipFile.getInputStream(zipEntry);
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String read;
+                while ((read = bufferedReader.readLine()) != null){
+                    if(read.contains("\"modid\"")){
+                        return read
+                                .replace("\"",       "")
+                                .replace("modid",    "")
+                                .replace(":",        "")
+                                .replace(",",        "")
+                                .replace("\t",       "")
+                                .replace("\n",       "")
+                                .replace(" ",        "")
+                                .replace("{",        "")
+                                .replace("}",        "");
+                    }
+                }
+            }
         }
         return null;
     }

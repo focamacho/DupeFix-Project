@@ -13,7 +13,7 @@ public abstract class ContainerRadiantCraftingTableMixin extends Container {
 	@Shadow public RadiantCraftingTableTileEntity tile;
 
 	@Override
-    public boolean canInteractWith (EntityPlayer player) {
+	public boolean canInteractWith (EntityPlayer player) {
 		BlockPos pos = this.tile.getPos();
 		if (this.tile.getWorld().getTileEntity(pos) != this.tile) return false;
 		return player.getDistanceSq(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D) <= 64.0D;
