@@ -6,9 +6,9 @@
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ContainerRadiantCraftingTableMixin",
     "ContainerGemCuttersTableMixin",
-    "ContainerUpgradesMixin",
-    "ContainerRadiantChestMixin"
+    "ContainerRadiantChestMixin",
+    "ContainerRadiantCraftingTableMixin",
+    "ContainerUpgradesMixin"
   ]
 }
