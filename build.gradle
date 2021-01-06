@@ -1,67 +1,46 @@
 buildscript {
     repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
-        maven {
-            name = 'forge'
-            url = 'https://files.minecraftforge.net/maven'
-        }
-        maven {
-
-            url = 'http://repo.spongepowered.org/maven'
-        }
+        mavenCentral()
+        maven { url = 'http://repo.spongepowered.org/maven' }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
-version = "3.1.0"
-group = "com.focamacho.dupefixproject"
-archivesBaseName = "DupeFixProject-1.12.2"
+version = '1.0'
+group = 'com.focamacho.dupefixproject'
+archivesBaseName = 'DupeFixProject-1.12.2'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
-sourceSets {
-    main {
-        ext.refMap = 'mixins.dupefixproject.refmap.json'
-    }
-}
-
-processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-
-        expand 'version': project.version, 'mcversion': project.minecraft.version
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-
-    rename '(.+_at.cfg)', 'META-INF/$1'
+mixin {
+    add sourceSets.main, "mixins.dupefixproject.refmap.json"
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
-    mappings = "snapshot_20171003"
+    mappings channel: 'snapshot', version: '20171003-1.12'
 
-    def args = [
-            '-Dfml.coreMods.load=com.focamacho.dupefixproject.asm.DupeFixProjectCoreMod',
-            '-Dmixin.hotSwap=true',
-            '-Dmixin.checks.interfaces=true'
-    ]
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
 
-    clientJvmArgs.addAll(args)
-    serverJvmArgs.addAll(args)
+        server {
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
 }
 
 configurations {
@@ -70,21 +49,16 @@ configurations {
 }
 
 repositories {
-    //mavenCentral()
-    maven {
-        url = 'http://repo.spongepowered.org/maven'
-    }
-
-    maven {
-        name = "CurseMaven"
-        url = "https://www.cursemaven.com"
-    }
+    maven { url = "http://repo.spongepowered.org/maven" }
+    maven { url = "https://www.cursemaven.com" }
 }
 
 dependencies {
-	//Arcane Archives
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+
+    //Arcane Archives
     compileOnly("curse.maven:arcanearchives-311357:3057332")
-	
+
     //Tiny Progressions
     compileOnly("curse.maven:tinyprogressions-250850:2721018")
 
@@ -152,6 +126,12 @@ dependencies {
     compileOnly("curse.maven:cofhcore-69162:2920433")
     compileOnly("curse.maven:cofhworld-271384:2920434")
 
+    //Tinkers' Complement
+    compileOnly("curse.maven:tinkerscomplement-272671:2843439")
+
+    //Chisel
+    compileOnly("curse.maven:chisel-235279:2915375")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false
@@ -170,6 +150,21 @@ jar {
             'MixinConfigs': 'mixins.dupefixproject.json',
             'FMLCorePlugin': 'com.focamacho.dupefixproject.asm.DupeFixProjectCoreMod'
     )
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
 }
 
 tasks.withType(JavaCompile) {
