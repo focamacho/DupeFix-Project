@@ -1,4 +1,4 @@
-# 💎 DupeFix Project 💎 
+# 💎 DupeFix Project 💎 <img src="http://cf.way2muchnoise.eu/full_356349_downloads.svg">
 
 DupeFix Project is a mod made for Minecraft 1.12.2 that fixes dupes in other mods.
 
