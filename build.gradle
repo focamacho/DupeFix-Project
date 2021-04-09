@@ -132,6 +132,9 @@ dependencies {
     //Chisel
     compileOnly("curse.maven:chisel-235279:2915375")
 
+    //Industrial Craft 2
+    compileOnly("curse.maven:industrialcraft-242638:3078604")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
         transitive = false

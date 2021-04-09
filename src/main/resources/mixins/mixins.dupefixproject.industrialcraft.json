@@ -1,12 +1,11 @@
 {
   "required": true,
-  "package": "com.focamacho.dupefixproject.mixin.thermalexpansion",
+  "package": "com.focamacho.dupefixproject.mixin.industrialcraft",
   "refmap": "mixins.dupefixproject.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BlockCacheMixin",
-    "ContainerSatchelFilterMixin"
+    "ContainerIndustrialWorkbenchMixin"
   ]
 }

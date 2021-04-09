@@ -23,6 +23,7 @@ public class LoadedFixes {
     public static boolean arcaneArchives = false;
     public static boolean tcomplement = false;
     public static boolean botania = false;
+    public static boolean industrialCraft = false;
 
     public static void sendLoadedFixesLog() {
         sendLog(actuallyAdditions, "Actually Additions");
@@ -44,6 +45,7 @@ public class LoadedFixes {
         sendLog(arcaneArchives, "Arcane Archives");
         sendLog(tcomplement, "Tinkers' Complement");
         sendLog(botania, "Botania");
+        sendLog(industrialCraft, "Industrial Craft");
     }
 
     private static void sendLog(boolean loaded, String modName) {

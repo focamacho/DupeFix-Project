@@ -60,6 +60,9 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         //Botania
         LoadedFixes.botania = loadMixin("mixins.dupefixproject.botania.json", "botania");
 
+        //Industrial Craft 2
+        LoadedFixes.industrialCraft = loadMixin("mixins.dupefixproject.industrialcraft.json", "ic2");
+
         MixinBootstrap.init();
         ModHandler.clear();
     }
