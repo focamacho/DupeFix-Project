@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.mixin.thaumicwonders;
 
+import com.verdantartifice.thaumicwonders.common.entities.EntityFlyingCarpet;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumHand;
@@ -9,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(targets = "com/verdantartifice/thaumicwonders/common/entities/EntityFlyingCarpet", remap = false)
+@Mixin(value = EntityFlyingCarpet.class, remap = false)
 public abstract class EntityFlyingCarpetMixin extends Entity {
 
     public EntityFlyingCarpetMixin(World worldIn) {

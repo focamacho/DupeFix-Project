@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.mixin.arcanearchives;
 
+import com.aranaira.arcanearchives.inventory.ContainerUpgrades;
 import com.aranaira.arcanearchives.tileentities.ImmanenceTileEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -7,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "com/aranaira/arcanearchives/inventory/ContainerUpgrades", remap = false)
+@Mixin(value = ContainerUpgrades.class, remap = false)
 public abstract class ContainerUpgradesMixin extends Container {
 
 	@Shadow private ImmanenceTileEntity tile;

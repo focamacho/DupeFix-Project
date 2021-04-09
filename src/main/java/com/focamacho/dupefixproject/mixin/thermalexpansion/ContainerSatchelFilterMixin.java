@@ -7,7 +7,7 @@ import net.minecraft.inventory.ClickType;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(ContainerSatchelFilter.class)
+@Mixin(value = ContainerSatchelFilter.class, remap = false)
 public abstract class ContainerSatchelFilterMixin extends ContainerCore {
 
     @Override

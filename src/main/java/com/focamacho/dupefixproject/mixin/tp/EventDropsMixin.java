@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.mixin.tp;
 
+import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -16,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(targets = "com/kashdeya/tinyprogressions/events/EventDrops", remap = false)
+@Mixin(value = EventDrops.class, remap = false)
 public class EventDropsMixin {
 
     @Inject(method = "onLivingDrops", at = @At("HEAD"), cancellable = true)

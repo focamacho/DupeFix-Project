@@ -1,6 +1,7 @@
 package com.focamacho.dupefixproject.mixin.actuallyadditions;
 
 import de.ellpeck.actuallyadditions.mod.tile.TileEntityInventoryBase;
+import de.ellpeck.actuallyadditions.mod.tile.TileEntityPhantomPlacer;
 import de.ellpeck.actuallyadditions.mod.tile.TileEntityPhantomface;
 import de.ellpeck.actuallyadditions.mod.util.StackUtil;
 import de.ellpeck.actuallyadditions.mod.util.WorldUtil;
@@ -12,7 +13,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "de/ellpeck/actuallyadditions/mod/tile/TileEntityPhantomPlacer", remap = false)
+@Mixin(value = TileEntityPhantomPlacer.class, remap = false)
 public abstract class TileEntityPhantomPlacerMixin extends TileEntityInventoryBase {
 
     @Shadow public abstract boolean isBoundThingInRange();

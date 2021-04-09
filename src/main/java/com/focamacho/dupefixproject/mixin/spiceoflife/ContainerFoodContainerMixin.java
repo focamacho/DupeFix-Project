@@ -5,12 +5,13 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import squeek.spiceoflife.inventory.ContainerFoodContainer;
 import squeek.spiceoflife.inventory.ContainerGeneric;
 import squeek.spiceoflife.items.ItemFoodContainer;
 
 import javax.annotation.Nonnull;
 
-@Mixin(targets = "squeek/spiceoflife/inventory/ContainerFoodContainer", remap = false)
+@Mixin(value = ContainerFoodContainer.class, remap = false)
 public abstract class ContainerFoodContainerMixin extends ContainerGeneric {
 
     @Shadow @Nonnull public abstract ItemStack getItemStack();

@@ -1,6 +1,7 @@
 package com.focamacho.dupefixproject.mixin.actuallyadditions;
 
 import de.ellpeck.actuallyadditions.mod.tile.CustomEnergyStorage;
+import de.ellpeck.actuallyadditions.mod.tile.TileEntityDirectionalBreaker;
 import de.ellpeck.actuallyadditions.mod.tile.TileEntityInventoryBase;
 import de.ellpeck.actuallyadditions.mod.util.StackUtil;
 import de.ellpeck.actuallyadditions.mod.util.WorldUtil;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "de/ellpeck/actuallyadditions/mod/tile/TileEntityDirectionalBreaker", remap = false)
+@Mixin(value = TileEntityDirectionalBreaker.class, remap = false)
 public abstract class TileEntityDirectionalBreakerMixin extends TileEntityInventoryBase {
 
     @Shadow private int currentTime;

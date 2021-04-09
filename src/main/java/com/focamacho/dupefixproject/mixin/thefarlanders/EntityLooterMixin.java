@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.mixin.thefarlanders;
 
+import com.legacy.farlanders.entity.hostile.EntityLooter;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,7 +15,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "com/legacy/farlanders/entity/hostile/EntityLooter", remap = false)
+@Mixin(value = EntityLooter.class, remap = false)
 public abstract class EntityLooterMixin extends EntityMob {
 
     @Shadow public abstract boolean getHasSword();

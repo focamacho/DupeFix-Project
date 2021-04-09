@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import thaumcraft.api.items.ItemsTC;
 
-@Mixin(targets = "crazypants/enderio/base/handler/darksteel/gui/DSUContainer", remap = false)
+@Mixin(value = DSUContainer.class, remap = false)
 public class DSUContainerMixin {
 
     @Inject(method = "canInteractWith", at = @At("HEAD"), cancellable = true)

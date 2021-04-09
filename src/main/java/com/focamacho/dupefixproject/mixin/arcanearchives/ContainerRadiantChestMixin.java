@@ -1,5 +1,6 @@
 package com.focamacho.dupefixproject.mixin.arcanearchives;
 
+import com.aranaira.arcanearchives.inventory.ContainerRadiantChest;
 import com.aranaira.arcanearchives.tileentities.RadiantChestTileEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -7,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "com/aranaira/arcanearchives/inventory/ContainerRadiantChest", remap = false)
+@Mixin(value = ContainerRadiantChest.class, remap = false)
 public abstract class ContainerRadiantChestMixin extends Container {
 
 	@Shadow protected RadiantChestTileEntity tile;
