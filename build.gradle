@@ -45,7 +45,7 @@ minecraft {
 
 configurations {
     embed
-    implementation.extendsFrom(embed)
+    compileOnly.extendsFrom(embed)
 }
 
 repositories {
@@ -156,19 +156,6 @@ jar {
 }
 
 jar.finalizedBy('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-    repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
-        }
-    }
-}
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
