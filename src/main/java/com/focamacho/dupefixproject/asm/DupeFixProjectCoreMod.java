@@ -51,6 +51,9 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         //Thermal Expansion
         LoadedFixes.thermalExpansion = loadMixin("mixins.dupefixproject.thermalexpansion.json", "thermalexpansion");
 
+        //Mekanism
+        LoadedFixes.mekanism = loadMixin("mixins.dupefixproject.mekanism.json", "mekanism");
+
         //Arcane Archives
         LoadedFixes.arcaneArchives = loadMixin("mixins.dupefixproject.arcanearchives.json", "arcanearchives");
 

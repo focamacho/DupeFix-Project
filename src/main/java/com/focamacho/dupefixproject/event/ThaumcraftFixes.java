@@ -37,7 +37,7 @@ public class ThaumcraftFixes {
     @SubscribeEvent
     public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Block block = event.getWorld().getBlockState(event.getPos()).getBlock();
-        if(block != null && block.isEqualTo(block, BlocksTC.arcaneWorkbench)) {
+        if(block != null && Block.isEqualTo(block, BlocksTC.arcaneWorkbench)) {
             if(event.getEntityPlayer() != null) {
                 if(event.getEntityPlayer().openContainer instanceof ContainerArcaneWorkbench) {
                     event.setCanceled(true);

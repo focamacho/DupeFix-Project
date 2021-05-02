@@ -1,6 +1,7 @@
 package com.focamacho.dupefixproject;
 
 import com.focamacho.dupefixproject.event.*;
+import com.focamacho.dupefixproject.fixes.MekanismFixes;
 import com.focamacho.dupefixproject.util.LoadedFixes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -15,7 +16,7 @@ public class DupeFixProject {
 
     public static final String MODID = "dupefixproject";
     public static final String NAME = "DupeFix Project";
-    public static final String VERSION = "3.1.2";
+    public static final String VERSION = "3.1.3";
 
     public static Logger logger = LogManager.getLogger(NAME);
 
@@ -23,10 +24,6 @@ public class DupeFixProject {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new VanillaFixes());
 
-        if(Loader.isModLoaded("mekanism")) {
-            MinecraftForge.EVENT_BUS.register(new MekanismFixes());
-            LoadedFixes.mekanism = true;
-        }
         if(Loader.isModLoaded("projectred-exploration")) {
             MinecraftForge.EVENT_BUS.register(new ProjectRedWorldFixes());
             LoadedFixes.projectRedExploration = true;
@@ -40,6 +37,9 @@ public class DupeFixProject {
             LoadedFixes.arcaneArchives = true;
         }
 
+        if(LoadedFixes.mekanism) {
+            MekanismFixes.fixBinRecipes();
+        }
         if(LoadedFixes.thaumcraft) {
             MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
         }
