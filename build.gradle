@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.16'
 
     //Arcane Archives
     compileOnly("curse.maven:arcanearchives-311357:3057332")
