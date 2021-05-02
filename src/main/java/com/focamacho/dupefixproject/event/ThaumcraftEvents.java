@@ -31,7 +31,7 @@ import thaumcraft.common.tiles.misc.TileHole;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThaumcraftFixes {
+public class ThaumcraftEvents {
 
     //Arcane Workbench Dupe Fix
     @SubscribeEvent

@@ -22,18 +22,18 @@ public class DupeFixProject {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new VanillaFixes());
+        MinecraftForge.EVENT_BUS.register(new VanillaEvents());
 
         if(Loader.isModLoaded("projectred-exploration")) {
-            MinecraftForge.EVENT_BUS.register(new ProjectRedWorldFixes());
+            MinecraftForge.EVENT_BUS.register(new ProjectRedWorldEvents());
             LoadedFixes.projectRedExploration = true;
         }
         if(Loader.isModLoaded("tconstruct")) {
-            MinecraftForge.EVENT_BUS.register(new TConstructFixes());
+            MinecraftForge.EVENT_BUS.register(new TConstructEvents());
             LoadedFixes.tconstruct = true;
         }
         if(Loader.isModLoaded("arcanearchives")) {
-            MinecraftForge.EVENT_BUS.register(new ArcaneArchivesFixes());
+            MinecraftForge.EVENT_BUS.register(new ArcaneArchivesEvents());
             LoadedFixes.arcaneArchives = true;
         }
 
@@ -41,10 +41,10 @@ public class DupeFixProject {
             MekanismFixes.fixBinRecipes();
         }
         if(LoadedFixes.thaumcraft) {
-            MinecraftForge.EVENT_BUS.register(new ThaumcraftFixes());
+            MinecraftForge.EVENT_BUS.register(new ThaumcraftEvents());
         }
         if(LoadedFixes.bloodMagic) {
-            MinecraftForge.EVENT_BUS.register(new BloodMagicFixes());
+            MinecraftForge.EVENT_BUS.register(new BloodMagicEvents());
         }
 
         LoadedFixes.sendLoadedFixesLog();

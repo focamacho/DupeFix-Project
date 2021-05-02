@@ -12,7 +12,7 @@ import slimeknights.tconstruct.tools.common.inventory.ContainerToolForge;
 
 import java.util.List;
 
-public class TConstructFixes {
+public class TConstructEvents {
 
     //Tool Forge Dupe Fix
     @SubscribeEvent

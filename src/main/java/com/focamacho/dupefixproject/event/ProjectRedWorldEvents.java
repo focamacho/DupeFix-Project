@@ -7,7 +7,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class ProjectRedWorldFixes {
+public class ProjectRedWorldEvents {
 
     //Backpack Dupe Fix
     @SubscribeEvent

@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 import java.util.List;
 
-public class ArcaneArchivesFixes {
+public class ArcaneArchivesEvents {
 
     //Radiant Crafting Table dupe Fix
     @SubscribeEvent
