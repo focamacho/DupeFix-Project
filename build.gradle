@@ -136,7 +136,7 @@ dependencies {
     compileOnly("curse.maven:industrialcraft-242638:3078604")
 
     //Mixins
-    embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
+    embed('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
         transitive = false
     }
 }
