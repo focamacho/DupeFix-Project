@@ -8,12 +8,15 @@ import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @Mixin(value = ContainerUpgrades.class, remap = false)
 public abstract class ContainerUpgradesMixin extends Container {
 
 	@Shadow private ImmanenceTileEntity tile;
 
 	@Override
+	@ParametersAreNonnullByDefault
 	public boolean canInteractWith(EntityPlayer player) {
 		BlockPos pos = this.tile.getPos();
 		if (this.tile.getWorld().getTileEntity(pos) != this.tile) return false;

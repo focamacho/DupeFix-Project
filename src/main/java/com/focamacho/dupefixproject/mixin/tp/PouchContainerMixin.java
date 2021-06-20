@@ -11,7 +11,7 @@ public class PouchContainerMixin extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer player) {
-        if(player.getHeldItemMainhand().getItem() != TechItems.pouch) return false;
-        return true;
+        return player.getHeldItemMainhand().getItem() == TechItems.pouch;
     }
+
 }

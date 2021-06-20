@@ -80,7 +80,7 @@ public abstract class TileEntityPhantomPlacerMixin extends TileEntityInventoryBa
             if (this.isBreaker) {
                 if(this.world.getTileEntity(this.boundPosition) != null) return;
                 Block blockToBreak = this.world.getBlockState(this.boundPosition).getBlock();
-                if (blockToBreak != null && this.world.getBlockState(this.boundPosition).getBlockHardness(this.world, this.boundPosition) > -1.0F) {
+                if (this.world.getBlockState(this.boundPosition).getBlockHardness(this.world, this.boundPosition) > -1.0F) {
                     NonNullList<ItemStack> drops = NonNullList.create();
                     blockToBreak.getDrops(drops, this.world, this.pos, this.world.getBlockState(this.boundPosition), 0);
 

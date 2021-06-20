@@ -36,7 +36,7 @@ public class TConstructEvents {
 
     @SubscribeEvent
     public void onTickPlayer(PlayerTickEvent event) {
-        if(event.player.openContainer != null && event.player.openContainer instanceof ContainerToolForge) {
+        if(event.player.openContainer instanceof ContainerToolForge) {
             if(!event.player.getEntityData().getBoolean("ToolForgeDupeFix")) {
                 BlockPos forgePos = ((ContainerToolForge) event.player.openContainer).getTile().getPos();
                 List<EntityPlayer> players = event.player.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(event.player.posX - 32, event.player.posY - 32, event.player.posZ - 32, event.player.posX + 32, event.player.posY + 32, event.player.posZ + 32));

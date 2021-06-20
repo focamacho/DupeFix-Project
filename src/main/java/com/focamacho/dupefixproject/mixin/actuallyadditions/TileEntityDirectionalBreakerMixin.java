@@ -63,7 +63,7 @@ public abstract class TileEntityDirectionalBreakerMixin extends TileEntityInvent
                 if(this.world.getTileEntity(coordsBlock) != null) return;
                 IBlockState breakState = this.world.getBlockState(coordsBlock);
                 Block blockToBreak = breakState.getBlock();
-                if (blockToBreak != null && !this.world.isAirBlock(coordsBlock) && this.world.getBlockState(coordsBlock).getBlockHardness(this.world, coordsBlock) > -1.0F) {
+                if (!this.world.isAirBlock(coordsBlock) && this.world.getBlockState(coordsBlock).getBlockHardness(this.world, coordsBlock) > -1.0F) {
                     NonNullList<ItemStack> drops = NonNullList.create();
                     blockToBreak.getDrops(drops, this.world, coordsBlock, breakState, 0);
                     float chance = WorldUtil.fireFakeHarvestEventsForDropChance(this, drops, this.world, coordsBlock);

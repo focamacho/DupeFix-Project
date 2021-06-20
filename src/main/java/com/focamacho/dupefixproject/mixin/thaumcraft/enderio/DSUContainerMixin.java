@@ -16,5 +16,4 @@ public class DSUContainerMixin {
         if(((DSUContainer)(Object)this).getSlot(1).getStack().getItem().equals(ItemsTC.primordialPearl)) info.setReturnValue(false);
     }
 
-
 }

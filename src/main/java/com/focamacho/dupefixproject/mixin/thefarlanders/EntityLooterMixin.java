@@ -32,7 +32,8 @@ public abstract class EntityLooterMixin extends EntityMob {
             EntityPlayer ep = (EntityPlayer) source.getImmediateSource();
 
             if (!this.getHasSword()) {
-                if (ep.inventory.getCurrentItem() != null && !ep.inventory.getCurrentItem().isEmpty()) {
+                ep.inventory.getCurrentItem();
+                if (!ep.inventory.getCurrentItem().isEmpty()) {
                     if (ep.inventory.getCurrentItem().getItem() instanceof ItemSword) {
                         ItemStack copy = ep.getHeldItemMainhand().copy();
                         this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, copy);

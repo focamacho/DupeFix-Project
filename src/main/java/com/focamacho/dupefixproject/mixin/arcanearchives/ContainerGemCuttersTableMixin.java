@@ -9,12 +9,15 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @Mixin(value = ContainerGemCuttersTable.class, remap = false)
 public abstract class ContainerGemCuttersTableMixin extends Container {
 
 	@Shadow @Final private GemCuttersTableTileEntity tile;
 
 	@Override
+	@ParametersAreNonnullByDefault
 	public boolean canInteractWith(EntityPlayer player) {
 		BlockPos pos = this.tile.getPos();
 		if (this.tile.getWorld().getTileEntity(pos) != this.tile) return false;

@@ -12,6 +12,8 @@ import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @Mixin(value = ContainerPersonalChest.class, remap = false)
 public abstract class ContainerPersonalChestMixin extends ContainerMekanism<TileEntityPersonalChest> {
 
@@ -23,6 +25,7 @@ public abstract class ContainerPersonalChestMixin extends ContainerMekanism<Tile
         super(tileEntityPersonalChest, inventory);
     }
 
+    @ParametersAreNonnullByDefault
     @Override
     public boolean canInteractWith(EntityPlayer player) {
         if(isBlock) return super.func_75145_c(player);

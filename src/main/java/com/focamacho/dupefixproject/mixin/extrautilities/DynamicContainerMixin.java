@@ -4,6 +4,7 @@ import com.rwtema.extrautils2.compatibility.CompatHelper;
 import com.rwtema.extrautils2.compatibility.StackHelper;
 import com.rwtema.extrautils2.gui.backend.DynamicContainer;
 import com.rwtema.extrautils2.utils.ItemStackNonNull;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
@@ -12,13 +13,17 @@ import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 @Mixin(value = DynamicContainer.class, remap = false)
+@MethodsReturnNonnullByDefault
 public abstract class DynamicContainerMixin extends Container {
 
     @Shadow public int playerSlotsStart;
 
     @Override
     @ItemStackNonNull
+    @ParametersAreNonnullByDefault
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2) {
         ItemStack itemstack = StackHelper.empty();
         Slot slot = this.inventorySlots.get(par2);

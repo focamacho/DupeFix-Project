@@ -37,15 +37,10 @@ public class DupeFixProject {
             LoadedFixes.arcaneArchives = true;
         }
 
-        if(LoadedFixes.mekanism) {
-            MekanismFixes.fixBinRecipes();
-        }
-        if(LoadedFixes.thaumcraft) {
-            MinecraftForge.EVENT_BUS.register(new ThaumcraftEvents());
-        }
-        if(LoadedFixes.bloodMagic) {
-            MinecraftForge.EVENT_BUS.register(new BloodMagicEvents());
-        }
+        if(LoadedFixes.mekanism) MekanismFixes.fixBinRecipes();
+        if(LoadedFixes.thaumcraft) MinecraftForge.EVENT_BUS.register(new ThaumcraftEvents());
+        if(LoadedFixes.bloodMagic) MinecraftForge.EVENT_BUS.register(new BloodMagicEvents());
+
 
         LoadedFixes.sendLoadedFixesLog();
     }

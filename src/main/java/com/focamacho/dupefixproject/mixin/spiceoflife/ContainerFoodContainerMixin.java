@@ -10,6 +10,7 @@ import squeek.spiceoflife.inventory.ContainerGeneric;
 import squeek.spiceoflife.items.ItemFoodContainer;
 
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 @Mixin(value = ContainerFoodContainer.class, remap = false)
 public abstract class ContainerFoodContainerMixin extends ContainerGeneric {
@@ -20,6 +21,7 @@ public abstract class ContainerFoodContainerMixin extends ContainerGeneric {
         super(inventory);
     }
 
+    @ParametersAreNonnullByDefault
     @Override
     public boolean canInteractWith(EntityPlayer playerIn) {
         return inventory.isUsableByPlayer(playerIn) && playerIn.getHeldItemMainhand().getItem() instanceof ItemFoodContainer;

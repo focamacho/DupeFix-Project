@@ -36,7 +36,7 @@ public class ArcaneArchivesEvents {
 
     @SubscribeEvent
     public void onTickPlayer(PlayerTickEvent event) {
-        if(event.player.openContainer != null && event.player.openContainer instanceof ContainerRadiantCraftingTable) {
+        if(event.player.openContainer instanceof ContainerRadiantCraftingTable) {
             if(!event.player.getEntityData().getBoolean("RadiantCraftingTableDupeFix")) {
                 BlockPos craftingTablePos = ((ContainerRadiantCraftingTable) event.player.openContainer).tile.getPos();
                 List<EntityPlayer> players = event.player.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(event.player.posX - 32, event.player.posY - 32, event.player.posZ - 32, event.player.posX + 32, event.player.posY + 32, event.player.posZ + 32));

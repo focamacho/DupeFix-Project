@@ -11,8 +11,7 @@ public class ContainerHoldingMixin extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer player) {
-        if(player.getHeldItemMainhand().getItem() != RegistrarBloodMagicItems.SIGIL_HOLDING) return false;
-        return true;
+        return player.getHeldItemMainhand().getItem() == RegistrarBloodMagicItems.SIGIL_HOLDING;
     }
 
 }
