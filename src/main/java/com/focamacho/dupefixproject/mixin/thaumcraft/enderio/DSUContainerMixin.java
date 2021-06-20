@@ -11,7 +11,7 @@ import thaumcraft.api.items.ItemsTC;
 @Mixin(value = DSUContainer.class, remap = false)
 public class DSUContainerMixin {
 
-    @Inject(method = "canInteractWith", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "func_75145_c", at = @At("HEAD"), cancellable = true)
     private void canInteractWith(EntityPlayer player, CallbackInfoReturnable<Boolean> info) {
         if(((DSUContainer)(Object)this).getSlot(1).getStack().getItem().equals(ItemsTC.primordialPearl)) info.setReturnValue(false);
     }
