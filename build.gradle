@@ -139,6 +139,7 @@ dependencies {
     embed('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
         transitive = false
     }
+    annotationProcessor 'org.spongepowered:mixin:0.8.3-SNAPSHOT:processor'
 }
 
 jar {
