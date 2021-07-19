@@ -24,6 +24,8 @@ public class LoadedFixes {
     public static boolean tcomplement = false;
     public static boolean botania = false;
     public static boolean industrialCraft = false;
+    public static boolean ironBackpacks = false;
+    public static boolean quark = false;
 
     public static void sendLoadedFixesLog() {
         sendLog(actuallyAdditions, "Actually Additions");
@@ -46,6 +48,7 @@ public class LoadedFixes {
         sendLog(tcomplement, "Tinkers' Complement");
         sendLog(botania, "Botania");
         sendLog(industrialCraft, "Industrial Craft");
+        sendLog(quark, "Quark");
     }
 
     private static void sendLog(boolean loaded, String modName) {

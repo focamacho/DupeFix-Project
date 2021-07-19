@@ -135,6 +135,9 @@ dependencies {
     //Industrial Craft 2
     compileOnly("curse.maven:industrialcraft-242638:3078604")
 
+    //Quark
+    compileOnly("curse.maven:quark-243121:2924091")
+
     //Mixins
     embed('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
         transitive = false
