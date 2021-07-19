@@ -135,6 +135,9 @@ dependencies {
     //Industrial Craft 2
     compileOnly("curse.maven:industrialcraft-242638:3078604")
 
+    //Iron Backpacks
+    compileOnly("curse.maven:ironbackpacks-227049:2564573")
+
     //Quark
     compileOnly("curse.maven:quark-243121:2924091")
 

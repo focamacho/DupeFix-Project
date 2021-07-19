@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.focamacho.dupefixproject.mixin.ironbackpacks",
+  "refmap": "mixins.dupefixproject.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ColorBackpackRecipeMixin",
+    "ContainerBackpackMixin"
+  ]
+}

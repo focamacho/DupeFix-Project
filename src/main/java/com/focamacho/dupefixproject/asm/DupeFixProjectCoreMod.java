@@ -66,6 +66,9 @@ public class DupeFixProjectCoreMod implements IFMLLoadingPlugin {
         //Industrial Craft 2
         LoadedFixes.industrialCraft = loadMixin("mixins.dupefixproject.industrialcraft.json", "ic2");
 
+        //Iron Backpacks
+        LoadedFixes.ironBackpacks = loadMixin("mixins.dupefixproject.ironbackpacks.json", "ironbackpacks");
+
         //Quark
         LoadedFixes.quark = loadMixin("mixins.dupefixproject.quark.json", "quark");
 

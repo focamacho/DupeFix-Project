@@ -48,6 +48,7 @@ public class LoadedFixes {
         sendLog(tcomplement, "Tinkers' Complement");
         sendLog(botania, "Botania");
         sendLog(industrialCraft, "Industrial Craft");
+        sendLog(ironBackpacks, "Iron Backpacks");
         sendLog(quark, "Quark");
     }
 
