@@ -16,7 +16,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.1.3'
+version = '3.1.4'
 group = 'com.focamacho.dupefixproject'
 archivesBaseName = 'DupeFixProject-1.12.2'
 

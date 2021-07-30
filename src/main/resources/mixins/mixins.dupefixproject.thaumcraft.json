@@ -7,6 +7,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ContainerHandMirrorMixin",
-    "ContainerRepairMixin"
+    "ContainerRepairMixin",
+    "EntityArcaneBoreMixin",
+    "EntityThaumcraftGolemMixin",
+    "EntityTurretCrossbowAdvancedMixin",
+    "EntityTurretCrossbowMixin"
   ]
 }
