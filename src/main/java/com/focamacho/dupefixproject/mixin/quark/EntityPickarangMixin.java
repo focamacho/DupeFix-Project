@@ -13,6 +13,9 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import vazkii.quark.base.sounds.QuarkSounds;
 import vazkii.quark.misc.feature.Pickarang;
 import vazkii.quark.world.entity.EntityPickarang;
@@ -40,14 +43,16 @@ public abstract class EntityPickarangMixin extends EntityThrowable {
         super(worldIn);
     }
 
-    @Override
-    public void onUpdate() {
+    @Inject(method = "func_70071_h_", at = @At("HEAD"), cancellable = true)
+    public void onUpdate(CallbackInfo info) {
         IS_PICKARANG_UPDATING.set(true);
         super.onUpdate();
         IS_PICKARANG_UPDATING.set(false);
 
-        if(isDead)
+        if(isDead) {
+            info.cancel();
             return;
+        }
 
         boolean returning = dataManager.get(RETURNING);
         this.liveTime++;
@@ -88,6 +93,7 @@ public abstract class EntityPickarangMixin extends EntityThrowable {
                     setDead();
                 }
 
+                info.cancel();
                 return;
             }
 
@@ -146,6 +152,8 @@ public abstract class EntityPickarangMixin extends EntityThrowable {
                 motionZ = motion.z;
             }
         }
+
+        info.cancel();
     }
 
 }
