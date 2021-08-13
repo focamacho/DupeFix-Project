@@ -16,7 +16,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.1.5'
+version = '3.1.6'
 group = 'com.focamacho.dupefixproject'
 archivesBaseName = 'DupeFixProject-1.12.2'
 
@@ -142,10 +142,10 @@ dependencies {
     compileOnly("curse.maven:quark-243121:2924091")
 
     //Mixins
-    embed('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
+    embed('org.spongepowered:mixin:0.8') {
         transitive = false
     }
-    annotationProcessor 'org.spongepowered:mixin:0.8.3-SNAPSHOT:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 jar {
