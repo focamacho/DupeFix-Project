@@ -22,4 +22,8 @@ public class EntityThaumcraftGolemMixin extends EntityOwnedConstruct {
         if(getHealth() <= 0.0F) cir.setReturnValue(false);
     }
 
+    @Override
+    protected void dropEquipment(boolean wasRecentlyHit, int lootingModifier) {
+    }
+
 }
